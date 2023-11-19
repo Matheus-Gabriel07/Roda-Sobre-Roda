@@ -8,9 +8,9 @@
   --darkest: #212121;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(to bottom, var(--primary), null);
-  --gradient-secondary: linear-gradient(to bottom, var(--secondary), null);
-  --gradient-white: linear-gradient(to bottom, var(--white), null);
+  --gradient-primary: linear-gradient(to bottom, var(--primary), #f62e1f);
+  --gradient-secondary: linear-gradient(to top, var(--secondary), null);
+  --gradient-white: linear-gradient(to bottom, var(--white), #e7e7e7);
   --gradient-white-smoke: linear-gradient(to bottom, var(--white-smoke), null);
   --gradient-darkest: linear-gradient(to bottom, var(--darkest), null);
 
@@ -29,7 +29,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
   font-family: "Oxygen", sans-serif;
   color: var(--darkest);
-  background: var(--white);
 }
