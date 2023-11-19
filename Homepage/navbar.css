@@ -1,0 +1,100 @@
+nav.container-navbar {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-box {
+    margin: 0 2rem;
+    padding: 1rem;
+    padding-inline: 2rem;
+    border: 0;
+    border-radius: 50px;
+    width: calc(100vw - 100px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white-smoke-shadow);
+    backdrop-filter: blur(10);
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left .logo-nav {
+    margin: 0 2rem 0 0;
+    width: 50px;
+}
+
+.navbar-left .container-search {
+    padding-inline: 1rem;
+    border: 0;
+    border-radius: 50px;
+    width: calc(50vw - 64px);
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--white-smoke);
+}
+
+.navbar-left .container-search .fi-rr-search {
+    margin: 0 0.8rem 0 0;
+    color: var(--white);
+}
+
+.navbar-left .container-search input#search {
+    border: 0;
+    width: 100%;
+    font-size: 1.1rem;
+    color: var(--white);
+    background: none;
+    outline: 0;
+    cursor: pointer;
+    transition: color 500ms;
+}
+
+.navbar-left .container-search input#search::placeholder {
+    color: var(--white);
+}
+
+.navbar-left .container-search input#search:focus,
+.navbar-left .container-search input#search:active {
+    color: var(--primary);
+}
+
+.navbar-right {
+    width: calc(50vw - 20vw - 124px);
+    justify-content: space-evenly;
+}
+
+.navbar-right img {
+    border-radius: 50%;
+    --size-image: 40px;
+    width:var(--size-image);
+    height: var(--size-image);
+    object-fit: cover;
+    box-shadow: 0 0 5px rgba(0,0,0,0.25);
+    transition: box-shadow 500ms;
+    cursor: pointer;
+}
+
+.navbar-right img:hover {
+    box-shadow: 0 0 15px #e34d428a, 0 0 25px #e34d428a;
+
+}
+.navbar-right .fi {
+    padding: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.navbar-right .fi:hover {
+    color: var(--secondary);
+    filter: drop-shadow(0 0 15px #e34d42be);
+}
