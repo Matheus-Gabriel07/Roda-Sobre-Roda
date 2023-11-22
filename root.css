@@ -13,7 +13,7 @@
   --gradient-secondary: linear-gradient(to top, var(--secondary), null);
   --gradient-white: linear-gradient(to bottom, var(--white), #e7e7e7);
   --gradient-white-deg: linear-gradient(164deg, var(--white) 50%, #868686);
-  --gradient-white-smoke: linear-gradient(to bottom, var(--white-smoke), null);
+  --gradient-white-smoke: linear-gradient(to bottom, var(--white-smoke), #868686);
   --gradient-darkest: linear-gradient(to bottom, var(--darkest), null);
 
   --titles: "Exo 2", sans-serif;
