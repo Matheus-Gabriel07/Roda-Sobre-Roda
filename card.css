@@ -1,9 +1,4 @@
-section.wapp {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-row: 2rem;
-}
-article.containner-card-vehicle {
+figure.containner-card-vehicle {
   padding: 0.8rem 0;
   padding-inline: 1rem;
   border: 0;
