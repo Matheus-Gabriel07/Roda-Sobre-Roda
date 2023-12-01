@@ -1,9 +1,9 @@
 body {
-  height: 100vh !important;
   background: var(--gradient-white);
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
+  overflow-x: hidden;
 }
 
 header.container-nav {
@@ -11,19 +11,20 @@ header.container-nav {
 }
 
 main {
-  margin: 10rem 2rem;
+  margin: 10rem 4rem;
 }
 main header.container-highlight {
   border-radius: 24px;
   z-index: 0;
   height: 450px;
-  width: 100%;
+  width: calc(100% - 124px);
   display: flex;
   align-items: flex-start;
   background: url("https://dragon2000-multisite.s3.eu-west-2.amazonaws.com/wp-content/uploads/sites/203/2021/05/19110448/Car-Station-Home-page-hero-2_result.jpg");
   background-size: cover;
   background-position: 50% 50%;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.35);
+  animation: fadeDown 750ms ease;
 }
 main header.container-highlight .container-highlight-details {
   margin: 0 2rem;
@@ -37,12 +38,14 @@ main header.container-highlight .container-highlight-details h3.title-highlight 
   font-family: var(--titles);
   font-size: 2.25em;
   color: var(--white);
+  animation: fadeDown 750ms ease-in-out;
 }
 main header.container-highlight .container-highlight-details p.description-highlight {
   padding: 8px;
   max-width: 550px;
   color: var(--white);
   font-size: 1.15;
+  animation: fadeDown 750ms ease-in-out;
 }
 main header.container-highlight .container-highlight-button {
   margin: 2rem;
@@ -62,8 +65,36 @@ main header.container-highlight .container-highlight-button button#alugar {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.35);
   cursor: pointer;
   transition: 250ms;
+  animation: fadeDown 750ms ease-in-out;
 }
 main header.container-highlight .container-highlight-button button#alugar:hover {
+  transform: scale(1.1);
   background: var(--white-smoke);
   color: var(--primary);
+}
+
+h1#saudacaoUser {
+  margin: 2rem 0;
+  font-size: 2.25em;
+}
+
+section.containner-categories {
+  margin: 1rem 0;
+}
+section.containner-categories h3 {
+  margin: 1rem 0;
+}
+section.containner-categories .wapper {
+  display: flex;
+}
+
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=homePage.css.map */

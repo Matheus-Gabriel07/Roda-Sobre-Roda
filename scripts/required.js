@@ -19,5 +19,3 @@ function requiredFormSubmit() {
         document.forms["frmLogin"].submit();
     }
 }
-
-export default requiredFormSubmit();
