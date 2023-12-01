@@ -18,6 +18,8 @@ main header.container-highlight {
   z-index: 0;
   height: 450px;
   width: 100%;
+  display: flex;
+  align-items: flex-start;
   background: url("https://dragon2000-multisite.s3.eu-west-2.amazonaws.com/wp-content/uploads/sites/203/2021/05/19110448/Car-Station-Home-page-hero-2_result.jpg");
   background-size: cover;
   background-position: 50% 50%;
@@ -26,8 +28,9 @@ main header.container-highlight {
 main header.container-highlight .container-highlight-details {
   margin: 0 2rem;
   position: relative;
+  width: 100%;
   top: 2rem;
-  width: 350px;
+  align-self: flex-start;
 }
 main header.container-highlight .container-highlight-details h3.title-highlight {
   margin-bottom: 1rem;
@@ -36,6 +39,31 @@ main header.container-highlight .container-highlight-details h3.title-highlight 
   color: var(--white);
 }
 main header.container-highlight .container-highlight-details p.description-highlight {
+  padding: 8px;
+  max-width: 550px;
   color: var(--white);
   font-size: 1.15;
+}
+main header.container-highlight .container-highlight-button {
+  margin: 2rem;
+  width: -moz-max-content;
+  width: max-content;
+  align-self: flex-end;
+}
+main header.container-highlight .container-highlight-button button#alugar {
+  border: 0;
+  border-radius: 25px;
+  padding-inline: 1rem;
+  font-size: 1.15em;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--white);
+  background: var(--primary);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: 250ms;
+}
+main header.container-highlight .container-highlight-button button#alugar:hover {
+  background: var(--white-smoke);
+  color: var(--primary);
 }/*# sourceMappingURL=homePage.css.map */
