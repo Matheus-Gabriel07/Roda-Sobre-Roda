@@ -1,0 +1,41 @@
+body {
+  height: 100vh !important;
+  background: var(--gradient-white);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+}
+
+header.container-nav {
+  grid-area: "header header header";
+}
+
+main {
+  margin: 10rem 2rem;
+}
+main header.container-highlight {
+  border-radius: 24px;
+  z-index: 0;
+  height: 450px;
+  width: 100%;
+  background: url("https://dragon2000-multisite.s3.eu-west-2.amazonaws.com/wp-content/uploads/sites/203/2021/05/19110448/Car-Station-Home-page-hero-2_result.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.35);
+}
+main header.container-highlight .container-highlight-details {
+  margin: 0 2rem;
+  position: relative;
+  top: 2rem;
+  width: 350px;
+}
+main header.container-highlight .container-highlight-details h3.title-highlight {
+  margin-bottom: 1rem;
+  font-family: var(--titles);
+  font-size: 2.25em;
+  color: var(--white);
+}
+main header.container-highlight .container-highlight-details p.description-highlight {
+  color: var(--white);
+  font-size: 1.15;
+}/*# sourceMappingURL=homePage.css.map */
