@@ -17,23 +17,23 @@
   --darkest-shadow: #21212186;
   --darkest-light: #3b3b3b;
 
+  /* Shadows */
+  --primary-shadow: #e34d4276;
+  --secondary-shadow: #ad3a3276;
+  --white-shadow: #fcfcfc76;
+  --white-smoke-shadow: #e6e6e692;
+  --darkest-shadow: #21212176;
+  --darkest-light-shadow: #3b3b3b76;
+
   /* Gradients */
   --gradient-primary: linear-gradient(to bottom, var(--primary), #f62e1f);
   --gradient-secondary: linear-gradient(to top, var(--secondary), null);
   --gradient-white: linear-gradient(to bottom, var(--white), #e7e7e7);
   --gradient-white-deg: linear-gradient(164deg, var(--white) 50%, #868686);
-  --gradient-white-smoke: linear-gradient(to bottom, var(--white-smoke), null);
+  --gradient-white-smoke: linear-gradient(to bottom, var(--white-smoke), #868686);
   --gradient-darkest: linear-gradient(to bottom, var(--darkest), null);
 
   --titles: "Exo 2", sans-serif;
-
-  /* Fonts */
-  --size-1: 2.5em;
-  --size-2: 36px;
-  --size-3: 2em;
-  --size-4: 26px;
-  --size-5: 21px;
-  --size-6: 1em;
 }
 
 * {
