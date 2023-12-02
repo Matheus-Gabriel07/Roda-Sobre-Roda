@@ -1,3 +1,9 @@
+/*  CSS SETTINGS - NAVBAR 
+    UTA: 19/11/23
+    @author Matheus Gabriel
+*/
+
+
 nav.container-navbar {
     width: 100vw;
     height: 100px;
@@ -18,6 +24,7 @@ nav.container-navbar {
     align-items: center;
     background: var(--white-smoke-shadow);
     backdrop-filter: blur(10);
+    animation: fadeDown 750ms ease;
 }
 
 .navbar-left, .navbar-right {
@@ -97,4 +104,15 @@ nav.container-navbar {
 .navbar-right .fi:hover {
     color: var(--secondary);
     filter: drop-shadow(0 0 15px #e34d42be);
+}
+
+@keyframes fadeDown {
+    0%{
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
