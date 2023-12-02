@@ -1,196 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roda Sobre Roda</title>
     <link rel="stylesheet" href="/Style/root/root.css" />
-    <link rel="stylesheet" href="/Style/card.css">
     <link rel="stylesheet" href="/Style/root/navbar.css" />
-    <link
-      rel="stylesheet"
-      href="/Style/homePage.css"
-    />
+    <link rel="stylesheet" href="/Style/homePage.css" />
+    <link rel="stylesheet" href="/Style/card.css" />
     <link rel="shortcut icon" href="/Assets/Logo-RSR.png" type="image/x-icon" />
   </head>
   <body>
-    <!-- Navbar -->
-
-    <header class="container-nav">
-      <nav class="container-navbar">
-        <div class="side-left">
-          <img src="/Assets/Logo-RSR.png" alt="logo" id="logo" />
-          <div class="container-search">
-            <i class="fi fi-rr-search"></i>
-            <input
-              type="search"
-              name="search"
-              id="search"
-              placeholder="Digite algum veículo"
+    <main class="root">
+      <nav class="container-navbar" id="navbar">
+        <div class="navbar-box">
+          <div class="navbar-left">
+            <img src="/Assets/Logo-RSR-R.png" alt="Logo-RSR" class="logo-nav" />
+            <div class="container-search">
+              <i class="fi fi-rr-search"></i>
+              <input
+                type="search"
+                name="search"
+                id="search"
+                placeholder="Digite um veiculo que deseja alugar"
+              />
+            </div>
+          </div>
+          <div class="navbar-right">
+            <i class="fi fi-rr-car"></i>
+            <i
+              class="fi fi-rr-settings"
+              onclick="window.location.href='#2'"
+            ></i>
+            <i
+              class="fi fi-rr-exit"
+              onclick="window.location.href='/Index/index.html'"
+            ></i>
+            <img
+              src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D"
+              alt="user"
+              id="userPhoto"
+              onclick="window.location.href='#1'"
             />
           </div>
         </div>
-        <div class="side-right">
-          <section class="menu-options">
-            <i class="fi fi-rr-settings"></i>
-            <i class="fi fi-rr-address-card" onclick="exitConfirm()"></i>
-            <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="username"
-              id="user"
-            />
-          </section>
-        </div>
       </nav>
-    </header>
-
-    <!-- Header Main -->
-
-    <main>
-      <header class="container-highlight">
-        <div class="container-highlight-details">
-          <h3 class="title-highlight">Lorem</h3>
-          <p class="description-highlight">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda,
-            doloremque nesciunt? Deleniti error blanditiis laboriosam, in
-            accusantium est. Harum neque totam quo aspernatur ad similique, sint
-            perferendis optio esse aliquid?
-          </p>
-        </div>
-        <div class="container-highlight-button">
+      <section class="container-main">
+        <!-- Header Main -->
+        <header class="container-highlight">
+          <div class="container-highlight-details">
+            <h3 class="title-highlight">Lorem</h3>
+            <p class="description-highlight">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Assumenda, doloremque nesciunt? Deleniti error blanditiis
+              laboriosam, in accusantium est. Harum neque totam quo aspernatur
+              ad similique, sint perferendis optio esse aliquid?
+            </p>
+          </div>
+          <div class="container-highlight-button">
             <button id="alugar" onclick="escolha()">Alugar</button>
-        </div>
-      </header>
+          </div>
+        </header>
 
-      <h1 id="saudacaoUser">Olá, Gustavo-Molina17</h1>
+        <h1 id="saudacaoUser">Olá, Gustavo-Molina17</h1>
 
-      <!-- Sessões -->
+        <!-- Sessões -->
 
-      <section class="container-categories">
-        <h3>Veiculos mais alugados</h3>
-        <section class="wapper">
-            <figure class="containner-card-vehicle">
-                <img
-                src="http://placehold.it/150x180"
-                alt="vehicle"
-                class="card-vehicle-img"
-                />
-                <div class="containner-card-vehicle-details">
-                    <h3 class="card-vehicle-title">Placeholder</h3>
-                    <p class="card-vehicle-paragraph-details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Reiciendis, rerum in ea temporibus doloribus exercitationem
-                eligendi impedit officia, esse, voluptas obcaecati soluta. A harum
-                nostrum unde odit animi labore natus!
-            </p>
-            <div class="container-card-vehicle-button">
-                <a href="#" class="button-alugar">Alugar</a>
-            </div>
-            </div>
-        </figure>
-        <figure class="containner-card-vehicle">
-            <img
-            src="http://placehold.it/150x180"
-            alt="vehicle"
-            class="card-vehicle-img"
-            />
-            <div class="containner-card-vehicle-details">
-                <h3 class="card-vehicle-title">Placeholder</h3>
-                <p class="card-vehicle-paragraph-details">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Reiciendis, rerum in ea temporibus doloribus exercitationem
-                    eligendi impedit officia, esse, voluptas obcaecati soluta. A harum
-                    nostrum unde odit animi labore natus!
-                </p>
-                <div class="container-card-vehicle-button">
-                    <a href="#" class="button-alugar">Alugar</a>
-                </div>
-            </div>
-        </figure>
-        <figure class="containner-card-vehicle">
-            <img
-              src="http://placehold.it/150x180"
-              alt="vehicle"
-              class="card-vehicle-img"
-            />
-            <div class="containner-card-vehicle-details">
-                <h3 class="card-vehicle-title">Placeholder</h3>
-                <p class="card-vehicle-paragraph-details">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Reiciendis, rerum in ea temporibus doloribus exercitationem
-                    eligendi impedit officia, esse, voluptas obcaecati soluta. A harum
-                    nostrum unde odit animi labore natus!
-                </p>
-                <div class="container-card-vehicle-button">
-                    <a href="#" class="button-alugar">Alugar</a>
-                </div>
-            </div>
-        </figure>
+        <section class="container-categories">
+          <h3 class="title-categorie">Veiculos mais alugados</h3>
+        </section>
+
+
       </section>
-    </section>
-      
-    <section class="container-categories">
-        <h3>Carros</h3>
-        <section class="wapper">
-            <figure class="containner-card-vehicle">
-                <img
-                src="http://placehold.it/150x180"
-                alt="vehicle"
-                class="card-vehicle-img"
-                />
-                <div class="containner-card-vehicle-details">
-                    <h3 class="card-vehicle-title">Placeholder</h3>
-                    <p class="card-vehicle-paragraph-details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Reiciendis, rerum in ea temporibus doloribus exercitationem
-                eligendi impedit officia, esse, voluptas obcaecati soluta. A harum
-                nostrum unde odit animi labore natus!
-            </p>
-            <div class="container-card-vehicle-button">
-                <a href="#" class="button-alugar">Alugar</a>
-            </div>
-            </div>
-        </figure>
-        <figure class="containner-card-vehicle">
-            <img
-            src="http://placehold.it/150x180"
-            alt="vehicle"
-            class="card-vehicle-img"
-            />
-            <div class="containner-card-vehicle-details">
-                <h3 class="card-vehicle-title">Placeholder</h3>
-                <p class="card-vehicle-paragraph-details">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Reiciendis, rerum in ea temporibus doloribus exercitationem
-                    eligendi impedit officia, esse, voluptas obcaecati soluta. A harum
-                    nostrum unde odit animi labore natus!
-                </p>
-                <div class="container-card-vehicle-button">
-                    <a href="#" class="button-alugar">Alugar</a>
-                </div>
-            </div>
-        </figure>
-        <figure class="containner-card-vehicle">
-            <img
-              src="http://placehold.it/150x180"
-              alt="vehicle"
-              class="card-vehicle-img"
-            />
-            <div class="containner-card-vehicle-details">
-                <h3 class="card-vehicle-title">Placeholder</h3>
-                <p class="card-vehicle-paragraph-details">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Reiciendis, rerum in ea temporibus doloribus exercitationem
-                    eligendi impedit officia, esse, voluptas obcaecati soluta. A harum
-                    nostrum unde odit animi labore natus!
-                </p>
-                <div class="container-card-vehicle-button">
-                    <a href="#" class="button-alugar">Alugar</a>
-                </div>
-            </div>
-        </figure>
-      </section>
-    </section>
     </main>
-</body>
+
+    <script src="/scripts/menu.js"></script>
+  </body>
 </html>

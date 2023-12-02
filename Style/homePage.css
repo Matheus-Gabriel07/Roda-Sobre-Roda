@@ -1,19 +1,15 @@
 body {
   background: var(--gradient-white);
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: grid;
   overflow-x: hidden;
 }
 
-header.container-nav {
-  grid-area: "header header header";
+.container-main {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-main {
-  margin: 10rem 4rem;
-}
-main header.container-highlight {
+.container-main header.container-highlight {
   border-radius: 24px;
   z-index: 0;
   height: 450px;
@@ -26,34 +22,38 @@ main header.container-highlight {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.35);
   animation: fadeDown 750ms ease;
 }
-main header.container-highlight .container-highlight-details {
+.container-main header.container-highlight .container-highlight-details {
   margin: 0 2rem;
   position: relative;
   width: 100%;
   top: 2rem;
   align-self: flex-start;
 }
-main header.container-highlight .container-highlight-details h3.title-highlight {
+.container-main header.container-highlight .container-highlight-details h3.title-highlight {
   margin-bottom: 1rem;
   font-family: var(--titles);
   font-size: 2.25em;
   color: var(--white);
   animation: fadeDown 750ms ease-in-out;
 }
-main header.container-highlight .container-highlight-details p.description-highlight {
+.container-main header.container-highlight .container-highlight-details p.description-highlight {
   padding: 8px;
+  border-radius: 16px;
   max-width: 550px;
   color: var(--white);
   font-size: 1.15;
+  background: var(--darkest-shadow);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   animation: fadeDown 750ms ease-in-out;
 }
-main header.container-highlight .container-highlight-button {
+.container-main header.container-highlight .container-highlight-button {
   margin: 2rem;
   width: -moz-max-content;
   width: max-content;
   align-self: flex-end;
 }
-main header.container-highlight .container-highlight-button button#alugar {
+.container-main header.container-highlight .container-highlight-button button#alugar {
   border: 0;
   border-radius: 25px;
   padding-inline: 1rem;
@@ -67,25 +67,75 @@ main header.container-highlight .container-highlight-button button#alugar {
   transition: 250ms;
   animation: fadeDown 750ms ease-in-out;
 }
-main header.container-highlight .container-highlight-button button#alugar:hover {
+.container-main header.container-highlight .container-highlight-button button#alugar:hover {
   transform: scale(1.1);
   background: var(--white-smoke);
   color: var(--primary);
 }
-
-h1#saudacaoUser {
-  margin: 2rem 0;
+.container-main h1#saudacaoUser {
+  margin: 4rem;
+  align-self: flex-start;
   font-size: 2.25em;
+  font-family: var(--titles);
+  animation: fadeDown 750ms ease-in-out;
 }
-
-section.containner-categories {
-  margin: 1rem 0;
+.container-main section.container-categories {
+  margin: 1rem 4rem;
+  align-self: flex-start;
+  animation: fadeDown 750ms ease-in-out;
 }
-section.containner-categories h3 {
-  margin: 1rem 0;
+.container-main section.container-categories h3.title-categorie {
+  font-size: 26px;
+  font-weight: 600;
 }
-section.containner-categories .wapper {
+.container-main section.container-categories .wrapper {
+  margin: 2rem 0;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.container-main section.container-categories .wrapper i {
+  z-index: 20;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  font-size: 1.15rem;
+  text-align: center;
+  line-height: 35px;
+  color: var(--primary);
+  background: var(--secondary-dark-shadow);
+  transition: transform 0.1s linear;
+  transition: 250ms;
+  cursor: pointer;
+}
+.container-main section.container-categories .wrapper i:active {
+  transform: translateY(-50%) scale(0.9);
+}
+.container-main section.container-categories .wrapper i:hover {
+  background: #e10505;
+}
+.container-main section.container-categories .wrapper i:first-child {
+  left: -22px;
+  display: none;
+}
+.container-main section.container-categories .wrapper i:last-child {
+  right: 22px;
+}
+.container-main section.container-categories .wrapper .carousel {
+  display: flex;
+  gap: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.container-main section.container-categories .carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.container-main section.container-categories .carousel.dragging figure {
+  pointer-events: none;
 }
 
 @keyframes fadeDown {
