@@ -1,15 +1,15 @@
 /*  CSS SETTINGS - NAVBAR 
-    UTA: 19/11/23
+    UTA: 05/12/23
     @author Matheus Gabriel
 */
-nav.container-navbar {
+nav.container-navbar.desktop {
   width: 100vw;
   height: 100px;
   position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 1rem;
   z-index: 10;
   transition: top 250ms linear;
 }
@@ -30,7 +30,8 @@ nav.container-navbar {
   animation: fadeDown 750ms ease;
 }
 
-.navbar-left, .navbar-right {
+.navbar-left,
+.navbar-right {
   display: flex;
   align-items: center;
 }
@@ -87,6 +88,31 @@ nav.container-navbar {
   transition: margin-right 500ms ease;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip span.tooltip-content {
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  margin-left: -60px;
+  width: 120px;
+  text-align: center;
+  font-size: 1em;
+  color: var(--white);
+  visibility: hidden;
+  background: var(--primary-shadow);
+  transition: 150ms;
+}
+
+.tooltip:hover span.tooltip-content {
+  visibility: visible;
+  animation: fadeDown 250ms ease;
+}
+
 .navbar-right img {
   border-radius: 50%;
   --size-image: 40px;
@@ -105,19 +131,63 @@ nav.container-navbar {
 }
 
 .navbar-right .fi {
+  display: block;
   padding: 8px;
   font-size: 1.1em;
   cursor: pointer;
   transition: 500ms;
 }
 
-.fi-rr-exit {
-  display: block;
-}
-
 .navbar-right .fi:hover {
   color: var(--secondary);
   filter: drop-shadow(0 0 15px rgba(227, 77, 66, 0.7450980392));
+}
+
+nav.container-navbar-media-device {
+  display: none;
+  width: 100vw;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  transition: top 250ms linear;
+  background: var(--white-shadow);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  animation: fadeDown 750ms ease;
+  -webkit-border-top-left-radius: 16px;
+  -webkit-border-top-right-radius: 16px;
+  -moz-border-radius-topleft: 16px;
+  -moz-border-radius-topright: 16px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+nav.container-navbar-media-device .navbar-box-device {
+  padding-inline: 1rem;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav.container-navbar-media-device .navbar-box-device #userPhoto {
+  border-radius: 100%;
+  position: absolute;
+  top: -25px;
+  --size: 50px;
+  width: var(--size);
+  height: var(--size);
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+nav.container-navbar-media-device .navbar-box-device .menu {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+nav.container-navbar-media-device .navbar-box-device .menu .fi {
+  font-size: 21px;
 }
 
 @keyframes fadeDown {
@@ -128,5 +198,18 @@ nav.container-navbar {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@media only screen and (max-device-width: 640px) {
+  nav.container-navbar.desktop {
+    display: none;
+  }
+  nav.container-navbar-media-device {
+    display: block;
+  }
+  .tooltip span.tooltip-content {
+    top: inherit;
+    bottom: 110%;
+    font-size: 0.8em;
   }
 }/*# sourceMappingURL=navbar.css.map */

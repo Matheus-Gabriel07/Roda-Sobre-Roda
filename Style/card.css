@@ -46,6 +46,7 @@ p.card-vehicle-paragraph-details::after {
 }
 
 .button-alugar {
+  display: block;
   padding: 0.2rem 0;
   padding-inline: 0.8rem;
   border: 0;

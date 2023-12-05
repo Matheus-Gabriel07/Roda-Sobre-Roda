@@ -43,4 +43,5 @@
   text-decoration: none;
   font-family: "Oxygen", sans-serif;
   color: var(--darkest);
+  scroll-behavior: smooth;
 }

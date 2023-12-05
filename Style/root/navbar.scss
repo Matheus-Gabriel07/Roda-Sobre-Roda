@@ -1,129 +1,215 @@
 /*  CSS SETTINGS - NAVBAR 
-    UTA: 19/11/23
+    UTA: 05/12/23
     @author Matheus Gabriel
 */
 
-
-nav.container-navbar {
-    width: 100vw;
-    height: 100px;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 1rem;
-    z-index: 10;
-    transition: top 250ms linear;
+nav.container-navbar.desktop {
+  width: 100vw;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: top 250ms linear;
 }
 
 .navbar-box {
-    margin: 0 2rem;
-    padding: 1rem;
-    padding-inline: 2rem;
-    border: 0;
-    border-radius: 50px;
-    width: calc(100vw - 100px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--white-smoke-shadow);
-    backdrop-filter: blur(10px);
-    animation: fadeDown 750ms ease;
+  margin: 0 2rem;
+  padding: 1rem;
+  padding-inline: 2rem;
+  border: 0;
+  border-radius: 50px;
+  width: calc(100vw - 100px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white-smoke-shadow);
+  backdrop-filter: blur(10px);
+  animation: fadeDown 750ms ease;
 }
 
-.navbar-left, .navbar-right {
-    display: flex;
-    align-items: center;
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
 }
 
 .navbar-left .logo-nav {
-    margin: 0 2rem 0 0;
-    width: 50px;
+  margin: 0 2rem 0 0;
+  width: 50px;
 }
 
 .navbar-left .container-search {
-    padding-inline: 1rem;
-    border: 0;
-    border-radius: 50px;
-    width: calc(50vw - 64px);
-    height: 40px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background: var(--white-smoke);
+  padding-inline: 1rem;
+  border: 0;
+  border-radius: 50px;
+  width: calc(50vw - 64px);
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--white-smoke);
 }
 
 .navbar-left .container-search .fi-rr-search {
-    margin: 0 0.8rem 0 0;
-    color: var(--white);
+  margin: 0 0.8rem 0 0;
+  color: var(--white);
 }
 
 .navbar-left .container-search input#search {
-    border: 0;
-    width: 100%;
-    font-size: 1.1rem;
-    color: var(--white);
-    background: none;
-    outline: 0;
-    cursor: pointer;
-    transition: color 500ms;
+  border: 0;
+  width: 100%;
+  font-size: 1.1rem;
+  color: var(--white);
+  background: none;
+  outline: 0;
+  cursor: pointer;
+  transition: color 500ms;
 }
 
 .navbar-left .container-search input#search::placeholder {
-    color: var(--white);
+  color: var(--white);
 }
 
 .navbar-left .container-search input#search:focus,
 .navbar-left .container-search input#search:active {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .navbar-right {
-    width: calc(50vw - 20vw - 124px);
-    justify-content: space-evenly;
-    transition: margin-right 500ms ease;
+  width: calc(50vw - 20vw - 124px);
+  justify-content: space-evenly;
+  transition: margin-right 500ms ease;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+  span.tooltip-content {
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    margin-left: -60px;
+    width: 120px;
+    text-align: center;
+    font-size: 1em;
+    color: var(--white);
+    visibility: hidden;
+    background: var(--primary-shadow);
+    transition: 150ms;
+  }
+}
+
+.tooltip:hover span.tooltip-content {
+  visibility: visible;
+  animation: fadeDown 250ms ease;
 }
 
 .navbar-right img {
-    border-radius: 50%;
-    --size-image: 40px;
-    width:var(--size-image);
-    height: var(--size-image);
-    object-fit: cover;
-    box-shadow: 0 0 5px rgba(0,0,0,0.25);
-    transition: box-shadow 500ms;
-    cursor: pointer;
-    transition: margin-right 500ms ease;
+  border-radius: 50%;
+  --size-image: 40px;
+  width: var(--size-image);
+  height: var(--size-image);
+  object-fit: cover;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 500ms;
+  cursor: pointer;
+  transition: margin-right 500ms ease;
 }
 
 .navbar-right img:hover {
-    box-shadow: 0 0 15px #e34d428a, 0 0 25px #e34d428a;
-
+  box-shadow: 0 0 15px #e34d428a, 0 0 25px #e34d428a;
 }
 .navbar-right .fi {
-    padding: 8px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: 500ms;
-
-}
-
-.fi-rr-exit {
-    display: block;
+  display: block;
+  padding: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 500ms;
 }
 
 .navbar-right .fi:hover {
-    color: var(--secondary);
-    filter: drop-shadow(0 0 15px #e34d42be);
+  color: var(--secondary);
+  filter: drop-shadow(0 0 15px #e34d42be);
+}
+
+nav.container-navbar-media-device {
+  display: none;
+  width: 100vw;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  transition: top 250ms linear;
+  background: var(--white-shadow);
+  backdrop-filter: blur(10px);
+  animation: fadeDown 750ms ease;
+  -webkit-border-top-left-radius: 16px;
+  -webkit-border-top-right-radius: 16px;
+  -moz-border-radius-topleft: 16px;
+  -moz-border-radius-topright: 16px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+
+  .navbar-box-device {
+    padding-inline: 1rem;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #userPhoto {
+      border-radius: 100%;
+      position: absolute;
+      top: -25px;
+      --size: 50px;
+      width: var(--size);
+      height: var(--size);
+      object-fit: cover;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100vw;
+
+      .fi {
+        font-size: 21px;
+      }
+    }
+  }
 }
 
 @keyframes fadeDown {
-    0%{
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-device-width: 640px) {
+  nav.container-navbar.desktop {
+    display: none;
+  }
+
+  nav.container-navbar-media-device {
+    display: block;
+  }
+
+  .tooltip span.tooltip-content {
+    top: inherit;
+    bottom: 110%;
+    font-size: 0.8em;
+  }
 }
