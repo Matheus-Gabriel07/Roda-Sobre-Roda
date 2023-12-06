@@ -200,7 +200,7 @@ nav.container-navbar-media-device .navbar-box-device .menu .fi {
     opacity: 1;
   }
 }
-@media only screen and (max-device-width: 640px) {
+@media only screen and (max-width: 800px) {
   nav.container-navbar.desktop {
     display: none;
   }
