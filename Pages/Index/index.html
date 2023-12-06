@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roda Sobre Roda</title>
-    <link rel="stylesheet" href="/Style/root/root.css">
-    <link rel="stylesheet" href="/Style/index.css">
+    <link rel="stylesheet" href="/Style/root/root.css" />
+    <link rel="stylesheet" href="/Style/index.css" />
     <link rel="shortcut icon" href="/Assets/Logo-RSR.png" type="image/x-icon" />
   </head>
   <body>
@@ -14,28 +14,60 @@
         <img src="/Assets/Logo-RSR.png" alt="logo" />
         <nav class="header-navegation">
           <a href="#" class="about button-navegation">About</a>
-          <a href="../Sign/login.html" class="sign-in button-navegation">Entrar</a>
+          <a href="../Sign/login.html" class="sign-in button-navegation"
+            >Entrar</a
+          >
         </nav>
       </header>
-      <div class="circle">
-        <section class="container-informations">
-          <p>Locadora</p>
-          <img src="/Assets/Logo-RSR-N.png" alt="Logo-RSR"/>
-          <h3>Liberdade em cada rota</h3>
-          <div class="container-buttons">
-            <a href="../Sign/login.html" class="sign-in buttons-infomation">Entrar</a>
-            <a href="../Sign/cadastro.html" class="sign-up buttons-infomation">Cadastrar</a>
-          </div>
-        </section>
-      </div>
+      <div class="circle"></div>
+      <section class="container-informations">
+        <p>Locadora</p>
+        <img src="/Assets/Logo-RSR-N.png" alt="Logo-RSR" id="logo" />
+        <h3>Liberdade em cada rota</h3>
+        <div class="container-buttons">
+          <a href="../Sign/login.html" class="sign-in buttons-infomation"
+            >Entrar</a
+          >
+          <a href="../Sign/cadastro.html" class="sign-up buttons-infomation"
+            >Cadastrar</a
+          >
+        </div>
+      </section>
       <div class="wapper">
         <div class="carrousel">
-          <img src="https://invictocar.com.br/wp-content/uploads/2022/02/carro-home02.png" alt="" class="pic">
-          <img src="https://www.moto.com.br/assets/motos_mais_buscadas/XMAX.webp" alt="" class="pic">
-          <img src="https://gruposinal-prod.imgix.net/upload/2022/12/a1ecda14-5d16-448e-b297-abdc1a3db726-carro-fiat-mobi.png?auto=format&ixlib=react-9.5.1-beta.1" alt="" class="pic">
-          <img src="https://www.moto.com.br/assets/motos_mais_buscadas/Versys650.webp" alt="" class="pic">
+          <img
+            src="https://invictocar.com.br/wp-content/uploads/2022/02/carro-home02.png"
+            alt=""
+            class="pic"
+          />
+          <img
+            src="https://www.moto.com.br/assets/motos_mais_buscadas/XMAX.webp"
+            alt=""
+            class="pic"
+          />
+          <img
+            src="https://gruposinal-prod.imgix.net/upload/2022/12/a1ecda14-5d16-448e-b297-abdc1a3db726-carro-fiat-mobi.png?auto=format&ixlib=react-9.5.1-beta.1"
+            alt=""
+            class="pic"
+          />
+          <img
+            src="https://www.moto.com.br/assets/motos_mais_buscadas/Versys650.webp"
+            alt=""
+            class="pic"
+          />
         </div>
       </div>
     </main>
+    <script>
+      function checkWindowSize() {
+        if (window.innerWidth <= 640) {
+          document.getElementById("logo").src = "/Assets/Logo-RSR-R.png";
+        } else {
+          document.getElementById("logo").src = "/Assets/Logo-RSR-N.png";
+        }
+      }
+
+      window.addEventListener('resize', checkWindowSize);
+    </script>
   </body>
 </html>

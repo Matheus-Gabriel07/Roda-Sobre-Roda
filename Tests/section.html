@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="card.css">
-    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="/Style/card.css">
+    <link rel="stylesheet" href="/Style/root/root.css">
     <link rel="stylesheet" href="section.css">
 </head>
 <body>
     <section class="container-section-vehicle">
+      
         <div class="container-section-details">
             <h3>Motos</h3>
-        </div>
-        <section class="container-vehicles-wapper">
+          </div>
+          <i class="fi fi-rr-angle-left" onclick="prev()"></i>
+          <i class="fi fi-rr-angle-right" onclick="next()"></i>
+
+          <section class="container-vehicles-wapper">
             <figure class="containner-card-vehicle">
                 <img
                   src="http://placehold.it/150x180"
@@ -92,5 +96,6 @@
             </figure>
         </section>
     </section>
+    <script src="/scripts/slider.js"></script>
 </body>
 </html>

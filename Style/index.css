@@ -73,6 +73,7 @@ header nav.header-navegation a.button-navegation.about:hover {
   background: var(--gradient-primary);
   display: flex;
   align-items: center;
+  transition: 250ms ease;
 }
 
 .container-informations {
@@ -80,6 +81,8 @@ header nav.header-navegation a.button-navegation.about:hover {
   display: block;
   position: relative;
   left: 25vh;
+  top: 15vh;
+  transition: 250ms ease;
 }
 
 .container-informations p {
@@ -171,15 +174,17 @@ header nav.header-navegation a.button-navegation.about:hover {
 }
 .carrousel {
   position: relative;
-  left: calc(100% - 55vw);
-  top: calc(35vw - 500px);
+  left: calc(100% - 50vw);
+  top: -300px;
   width: 50vw;
-  height: 500px;
+  height: -moz-max-content;
+  height: max-content;
+  transition: 250ms ease;
 }
 
 .carrousel > img {
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
   -o-object-fit: contain;
      object-fit: contain;
   position: absolute;
@@ -203,4 +208,80 @@ img:nth-child(4) {
 
 img:nth-child(5) {
   animation-delay: 16s;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container-informations {
+    left: 15vh;
+  }
+  .carrousel {
+    width: 40vw;
+    top: 50%;
+  }
+  .carrousel > img {
+    width: 325px;
+    height: 325px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  header nav.header-navegation a.button-navegation.sign-in,
+  header nav.header-navegation a.button-navegation.about,
+  .container-informations .container-buttons a.buttons-infomation.sign-in,
+  .container-informations .container-buttons a.buttons-infomation.sign-up {
+    font-size: 0.8em;
+  }
+  .carrousel {
+    display: none;
+  }
+  .container-informations p {
+    font-size: 0.8em;
+  }
+  .container-informations img {
+    width: 250px;
+  }
+  .container-informations h3 {
+    margin: 2rem -0.3rem;
+    font-size: 1.15em;
+  }
+}
+@media only screen and (max-width: 640px) {
+  header {
+    display: none;
+  }
+  .circle {
+    width: 100vh;
+    top: initial;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-clip-path: circle(50% at 50% 120%);
+            clip-path: circle(50% at 50% 120%);
+  }
+  .container-informations {
+    position: absolute;
+    z-index: 10;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+  }
+  .container-informations p,
+  .container-informations h3 {
+    color: var(--primary);
+  }
+  .container-informations h3 {
+    font-size: 1em;
+    text-align: center;
+  }
+  .container-informations .container-buttons {
+    gap: 1rem;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    top: calc(100% + 125px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .container-informations .container-buttons a.buttons-infomation {
+    margin: 0;
+  }
 }/*# sourceMappingURL=index.css.map */
