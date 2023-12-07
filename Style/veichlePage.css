@@ -1,13 +1,14 @@
 body {
-  overflow: hidden;
   background: var(--gradient-white);
+  overflow-x: hidden;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #root {
+  height: -moz-max-content;
+  height: max-content;
   width: 100%;
-  height: 100vh;
   padding: 2rem 0;
   padding-inline: 2rem;
 }
@@ -15,13 +16,14 @@ body {
 .container-veichle {
   margin-top: 3rem;
   gap: 8rem;
-  position: absolute;
+  position: relative;
   top: 50%;
   transform: translateY(-50%);
   width: calc(100% - 4rem);
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 250ms ease;
 }
 
 .container-veichle-gallery {
@@ -30,6 +32,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: slideInRight 750ms linear;
 }
 .container-veichle-gallery .gallry-veichle > img {
   margin: 0 0.5rem;
@@ -38,11 +41,14 @@ body {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
+.container-veichle-gallery .gallry-veichle > img:hover {
+  border: 1.5px solid var(--secondary);
+}
 
 .container-veichle-details {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-direction: column;
   padding: 1rem 0;
   padding-inline: 2rem;
@@ -51,6 +57,7 @@ body {
   height: 80vh;
   background: var(--white-smoke-shadow);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  animation: fadeDown 750ms ease-in-out;
 }
 .container-veichle-details a.voltar {
   text-decoration: underline;
@@ -59,17 +66,125 @@ body {
 .container-veichle-details .conatiner-description h1 {
   margin: 1rem 0;
   font-weight: 700;
+  font-family: var(--titles);
   font-size: 2em;
   color: var(--primary);
+  animation: fadeDown 750ms ease 150ms;
+  cursor: default;
 }
 .container-veichle-details .conatiner-description .stars {
   margin: 1rem 0;
   display: flex;
   align-items: center;
+  animation: fadeDown 750ms ease 200ms;
 }
 .container-veichle-details .conatiner-description .stars .fi,
 .container-veichle-details .conatiner-description .stars .general-stars {
   margin: 0 0.25rem;
   color: var(--primary-shadow);
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  cursor: default;
+}
+.container-veichle-details .conatiner-description p.description-veichle {
+  margin: 1rem 0;
+  font-size: 0.75em;
+  cursor: default;
+  animation: fadeDown 750ms ease 250ms;
+}
+.container-veichle-details .conatiner-description .especificacoes-veichle {
+  margin: 2rem 0;
+  padding: 1rem 0;
+  padding-inline: 2rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  place-items: center;
+}
+.container-veichle-details .conatiner-description .especificacoes-veichle .cir-1 .circle,
+.container-veichle-details .conatiner-description .especificacoes-veichle .cir-2 .circle,
+.container-veichle-details .conatiner-description .especificacoes-veichle .cir-3 .circle,
+.container-veichle-details .conatiner-description .especificacoes-veichle .cir-4 .circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --size: 80px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  background: var(--white-shadow);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  animation: fadeDown 750ms ease 250ms;
+  cursor: default;
+}
+.container-veichle-details .conatiner-description .especificacoes-veichle .cir-1 .circle p,
+.container-veichle-details .conatiner-description .especificacoes-veichle .cir-2 .circle p,
+.container-veichle-details .conatiner-description .especificacoes-veichle .cir-3 .circle p,
+.container-veichle-details .conatiner-description .especificacoes-veichle .cir-4 .circle p {
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.container-veichle-details .conatiner-description .container-value-alugar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeDown 750ms ease 300ms;
+}
+.container-veichle-details .conatiner-description .container-value-alugar h3.valor-diaria {
+  font-size: 1em;
+  color: var(--primary);
+  transition: 250ms;
+  cursor: default;
+}
+.container-veichle-details .conatiner-description .container-value-alugar button#alugar {
+  padding: 0.8rem 0;
+  padding-inline: 2rem;
+  border: 0;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1em;
+  color: var(--secondary);
+  background: var(--white-shadow);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  transition: 250ms;
+  cursor: pointer;
+}
+.container-veichle-details .conatiner-description .container-value-alugar button#alugar:hover {
+  color: var(--darkest);
+  background: var(--primary);
+  box-shadow: 0 0 50px var(--secondary-shadow);
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .container-veichle {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=veichlePage.css.map */
