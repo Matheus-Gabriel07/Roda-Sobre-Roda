@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSR - User</title>
+    <link rel="stylesheet" href="/Style/root/root.css" />
+    <link rel="stylesheet" href="/Style/root/navbar.css" />
+    <link rel="stylesheet" href="/Style/user.css">
+    <link rel="shortcut icon" href="/Assets/Logo-RSR.png" type="image/x-icon" />
+</head>
+<body>
+    <main id="root">
+        <section class="display-user">
+            <div class="side-left">
+                <img src="#" alt="userPhoto" id="userPhoto">
+                <div class="side-left-infomations">
+                    <h1 id="userName">Kaique</h1>
+                    <p id="emailUser">loremLorem@lorem.cm</p>
+                    <a href="/edit">Editar perfil</a>
+                </div>
+            </div>
+            <div class="side-right">
+                <div class="cva">
+                    <p>Veiculos Alugados</p>
+                    <span id="qnt-cva"></span>
+                </div>
+                <div class="cvd">
+                    <p>Veiculos devolvios</p>
+                    <span id="qnt-cvd"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/scripts/navbar.js"></script>
+    <script>
+        let user = "Kaique"
+        document.title = "RSR - " + user
+      </script>
+</body>
+</html>

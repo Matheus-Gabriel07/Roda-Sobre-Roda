@@ -27,6 +27,7 @@
 
   /* Gradients */
   --gradient-primary: linear-gradient(to bottom, var(--primary), #f62e1f);
+  --gradient-primary-white: linear-gradient(to bottom, var(--primary), var(--white-shadow), var(--white));
   --gradient-secondary: linear-gradient(to top, var(--secondary), null);
   --gradient-white: linear-gradient(to bottom, var(--white), #e7e7e7);
   --gradient-white-deg: linear-gradient(164deg, var(--white) 50%, #868686);
