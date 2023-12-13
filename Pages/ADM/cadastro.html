@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSR - Cadastro</title>
+</head>
+<body>
+    <main id="root">
+        <div class="container-cadastro">
+            <form action="#" method="post" name="frmCVeiculos">
+                <div class="container-input">
+                    <label for="modelo">Modelo *</label>
+                    <input type="text" name="modelo" id="modelo" placeholder="Digite o modelo" maxlength="50" />
+                </div>
+                <div class="container-input">
+                    <label for="marca">Marca *</label>
+                    <input type="text" name="marca" id="marca" placeholder="Digite a marca" maxlength="50" />
+                </div>
+                <div class="container-input">
+                    <label for="ano">Ano *</label>
+                    <input type="number" name="ano" id="ano" placeholder="Digite 0 ano de fabricação" maxlength="4" />
+                </div>
+                <div class="container-input">
+                    <label for="diaria">Valor da diaria *</label>
+                    <input type="number" name="diaria" id="diaria" placeholder="Digite o valor da diaria" maxlength="50" />
+                </div>
+                <div class="container-input">
+                    <label for="descricao">Descrição *</label>
+                    <input type="text" name="descricao" id="descricao" placeholder="Digite a descrição" maxlength="350" />
+                </div>
+                <div class="container-input">
+                    <label for="cor">Selecione a cor *</label>
+                    <select name="cor" id="cor">
+                        <option value="Azul">Azul</option>
+                        <option value="Vermelho">Vermelho</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Cinza">Cinza</option>
+                        <option value="Prata">Prata</option>
+                        <option value="Branco">Branco</option>
+                        <option value="Preto">Preto</option>
+                    </select>
+                </div>
+                <div class="container-input">
+                    <label for="imgPrim">Imagem principal *</label>
+                    <input type="file" name="imgPrim" id="imgPrim" value="Insira a imagem" maxlength="1"/>
+                </div>
+                <div class="container-input">
+                    <label for="imgAdc">Imagem adicionais </label>
+                    <input type="file" name="imgAdc" id="imdAdc" value="Insira imagens adicionais"/>
+                </div>
+                <input type="submit" value="Cadastrar" onclick="validarCadastro()">
+            </form>
+        </div>
+        <script src="/scripts/validarCad.js"></script>
+    </main>
+</body>
+</html>

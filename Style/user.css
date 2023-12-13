@@ -1,0 +1,150 @@
+body {
+  background: var(--gradient-primary-white);
+  background-repeat: no-repeat;
+  height: -moz-max-content;
+  height: max-content;
+  overflow-y: visible;
+}
+
+#root {
+  height: -moz-max-content;
+  height: max-content;
+  padding: 2rem 0;
+  padding-inline: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.display-user {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.display-user .side-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+.display-user .side-left img.userPhotoPerfil {
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.display-user .side-left .side-left-infomations h1#userName {
+  font-family: var(--titles);
+  font-size: 48px;
+}
+.display-user .side-left .side-left-infomations p#emailUser {
+  margin: 0.25rem 0;
+  font-size: 21px;
+  font-weight: 400;
+}
+.display-user .side-left .side-left-infomations a {
+  font-size: 1em;
+  -webkit-text-decoration: underline 1px var(--primary);
+          text-decoration: underline 1px var(--primary);
+  color: var(--primary);
+  transition: 250ms;
+}
+.display-user .side-left .side-left-infomations a:hover {
+  color: var(--darkest);
+  -webkit-text-decoration: underline 1px var(--darkest);
+          text-decoration: underline 1px var(--darkest);
+}
+.display-user .side-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.display-user .side-right .cva,
+.display-user .side-right .cvd {
+  width: 150px;
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  background: var(--white-smoke);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+.display-user .side-right .cva p,
+.display-user .side-right .cvd p {
+  font-weight: 400;
+  font-size: 1em;
+  text-transform: capitalize;
+}
+.display-user .side-right span#qnt-cva,
+.display-user .side-right span#qnt-cvd {
+  margin: 1rem 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 1024px) {
+  #root {
+    padding-inline: 4rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #root {
+    padding-bottom: 6rem;
+  }
+  .display-user {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .display-user .side-left img.userPhotoPerfil {
+    width: 200px;
+    height: 200px;
+  }
+  .display-user .side-right {
+    flex-direction: row;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #root {
+    padding-inline: 1rem;
+  }
+  .display-user {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .display-user .side-left {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .display-user .side-left img.userPhotoPerfil {
+    width: 200px;
+    height: 200px;
+  }
+  .display-user .side-left .side-left-infomations p#emailUser {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .display-user {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .display-user .side-right {
+    display: none;
+  }
+}/*# sourceMappingURL=user.css.map */

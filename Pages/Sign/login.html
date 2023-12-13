@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roda Sobre Roda</title>
+    <link rel="stylesheet" href="/Style/root/root.css" />
+    <link rel="shortcut icon" href="/Assets/Logo-RSR.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/Style/sign.css">
+
+  </head>
+  <body>
+    <main class="root">
+      <header>
+        <img src="/Assets/Logo-RSR.png" alt="logo" />
+      </header>
+      <div class="wapper carrousel">
+        <img
+          src="https://invictocar.com.br/wp-content/uploads/2022/02/carro-home02.png"
+          alt=""
+          class="pic"
+        />
+        <img
+          src="https://www.moto.com.br/assets/motos_mais_buscadas/XMAX.webp"
+          alt=""
+          class="pic"
+        />
+        <img
+          src="https://gruposinal-prod.imgix.net/upload/2022/12/a1ecda14-5d16-448e-b297-abdc1a3db726-carro-fiat-mobi.png?auto=format&ixlib=react-9.5.1-beta.1"
+          alt=""
+          class="pic"
+        />
+        <img
+          src="https://www.moto.com.br/assets/motos_mais_buscadas/Versys650.webp"
+          alt=""
+          class="pic"
+        />
+      </div>
+      <section class="container">
+        <div class="container-login">
+          <div class="container-login-details">
+            <h1>Login</h1>
+            <a href="./cadastro.html" class="redirect-button">Cadastrar</a>
+          </div>
+          <form action="/Pages/Home/main.html" method="post" name="frmLogin">
+            <div class="input-container ic1">
+              <input id="username" class="input" type="text" placeholder=" " />
+              <div class="cut"></div>
+              <label for="username" class="placeholder">Username</label>
+            </div>
+            <div class="input-container ic1">
+              <input
+                id="password"
+                class="input"
+                type="password"
+                placeholder=" "
+              />
+              <div class="cut"></div>
+              <label for="password" class="placeholder">Senha</label>
+            </div>
+            <button type="submit" id="submit">Entrar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="/scripts/loading.js"></script>
+  </body>
+</html>

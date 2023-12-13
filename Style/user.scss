@@ -1,0 +1,169 @@
+body {
+  background: var(--gradient-primary-white);
+  background-repeat: no-repeat;
+  height: max-content;
+  overflow-y: visible;
+}
+
+#root {
+  height: max-content;
+  padding: 2rem 0;
+  padding-inline: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.display-user {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .side-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+
+    img.userPhotoPerfil {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 100%;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .side-left-infomations {
+      h1#userName {
+        font-family: var(--titles);
+        font-size: 48px;
+      }
+
+      p#emailUser {
+        margin: 0.25rem 0;
+        font-size: 21px;
+        font-weight: 400;
+      }
+
+      a {
+        font-size: 1em;
+        text-decoration: underline 1px var(--primary);
+        color: var(--primary);
+        transition: 250ms;
+      }
+
+      a:hover {
+        color: var(--darkest);
+        text-decoration: underline 1px var(--darkest);
+      }
+    }
+  }
+
+  .side-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    .cva,
+    .cvd {
+      width: 150px;
+      padding: 0.5rem 1rem;
+      border-radius: 16px;
+      background: var(--white-smoke);
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      text-align: center;
+
+      p {
+        font-weight: 400;
+        font-size: 1em;
+        text-transform: capitalize;
+      }
+    }
+
+    span#qnt-cva,
+    span#qnt-cvd {
+      margin: 1rem 0;
+      font-size: 26px;
+      font-weight: 700;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #root {
+    padding-inline: 4rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #root {
+    padding-bottom: 6rem;
+  }
+
+  .display-user {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+
+    .side-left {
+      img.userPhotoPerfil {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .side-right {
+      flex-direction: row;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #root {
+    padding-inline: 1rem;
+  }
+
+  .display-user {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+
+    .side-left {
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      img.userPhotoPerfil {
+        width: 200px;
+        height: 200px;
+      }
+
+      .side-left-infomations {
+        p#emailUser {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+    .display-user {
+        margin-top: 0;
+        margin-bottom: 2rem;
+        gap: 2rem;
+        flex-direction: column;
+        justify-content: center;
+
+        .side-right {
+            display: none;
+        }
+    }
+}
