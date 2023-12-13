@@ -5,14 +5,23 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
+import java.io.File;
 import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 public class DAO {
 
@@ -132,7 +141,11 @@ public class DAO {
 		}
 	}
 
-	public void selecionarContato(UserBeans usuario) {
+	/*-------------------------------
+	 * 			CRUD - READ
+	 * 			  Usuários
+	 * ------------------------------*/
+	public void selecionarUsuario(UserBeans usuario) {
 		String read2 = "select * from usuarios where iduser = ?";
 		try {
 			Connection con = conectar();
@@ -159,7 +172,6 @@ public class DAO {
 	 * 			CRUD - CREATE
 	 * 			  Usuários
 	 * ------------------------------*/
-
 	public void inserirUsuario(UserBeans usuario) {
 
 		String create = "insert into usuarios(nome, email,senha,veiAlugados,veiDevolvidos,imagem, isAdmin) values (?,?,?,0,0,?,?);";
@@ -182,11 +194,73 @@ public class DAO {
 			System.out.println(e);
 		}
 	}
-	
-	public String generateImage(String userName) {
-		return "Hi";
+
+	public String generateImage(String userName) throws IOException {
+		int width = 400;
+		int height = 400;
+		int circleWidth = height;
+
+		BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		Graphics2D g2d = bufferedImage.createGraphics();
+
+		g2d.setColor(Color.white);
+		g2d.fillRect(0, 0, width, height);
+
+		g2d.setColor(Color.yellow);
+		g2d.fillOval(0, 0, circleWidth, height);
+		g2d.setColor(Color.black);
+		g2d.setFont(new Font("TimesRoman", Font.PLAIN, 100));
+		g2d.drawString(userName, 120, 120);
+		g2d.dispose();
+
+		File file = new File("myimage.png");
+		ImageIO.write(bufferedImage, "png", file);
+		file = new File("myimage.jpg");
+		ImageIO.write(bufferedImage, "jpg", file);
+		ImageIO.write(bufferedImage, "jpg", file);
+
+		return file.toString();
 	}
-	
+
+	/*-------------------------------
+	 * 			CRUD - UPDATE
+	 * 			  Usuários
+	 * ------------------------------*/
+	public void atualizarUsuario(UserBeans usuario) {
+		String update = "update contatos set nome=?,email=?,senha=? where idcon=?\"";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(update);
+			pst.setString(1, usuario.getNome());
+			pst.setString(2, usuario.getEmail());
+			pst.setString(3, usuario.getSenha());
+			pst.setString(4, usuario.getIduser());
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	/*-------------------------------
+	 * 			CRUD - DELETE
+	 * 			  Usuários
+	 * ------------------------------*/
+	public void deletarUsuários(UserBeans usuario) {
+		String delete = "delete from usuarios where iduser=?";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(delete);
+			pst.setString(1, usuario.getIduser());
+			pst.executeUpdate();
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	/*-------------------------------
+	 * 			CRUD - READ
+	 * 			  Veiculo
+	 * ------------------------------*/
 	public void selecionarVeiculo(JavaBeans veiculo) {
 		String read2 = "select * from usuarios where iduser = ?";
 		try {
@@ -197,7 +271,7 @@ public class DAO {
 			while (rs.next()) {
 				veiculo.setIdcar(rs.getString(1));
 				veiculo.setMarca(rs.getString(2));
-				veiculo.setTipo( rs.getString(3));
+				veiculo.setTipo(rs.getString(3));
 				veiculo.setModelo(rs.getString(4));
 				veiculo.setCor(rs.getString(5));
 				veiculo.setAno(rs.getString(6));

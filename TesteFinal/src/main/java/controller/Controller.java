@@ -1,3 +1,13 @@
+/* _____________________________________________________________
+ * 							CONTROLLER 
+ * 	Métodos - (doGet, homePage, validaLogin, novoUsuario 
+ * 
+ * 	@author Kaique Magalhães
+ * 	@author Matheus Gabriel
+ * 	@version - 2.5
+ * _____________________________________________________________
+ * */
+
 package controller;
 
 import java.io.IOException;
@@ -15,7 +25,7 @@ import model.DAO;
 import model.JavaBeans;
 import model.UserBeans;
 
-@WebServlet({ "/Controller", "/main", "/insert" })
+@WebServlet({ "/Controller", "/main", "/insert", "/user" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
@@ -26,26 +36,61 @@ public class Controller extends HttpServlet {
 		super();
 	}
 
+	/**
+	 * ----------------------------------------------------------------
+	 * AÇÕES DE REDIRECIONAENTO
+	 * ----------------------------------------------------------------
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String action = request.getServletPath();
-		if (action.equals("/main")) {
-			homePage(request, response);
-		} else if (action.equals("/insert")) {
-			novoUsuario(request, response);
-		} else {
-			dao.testeConexao();
-			response.sendRedirect("index.html");
+		try {
+			String action = request.getServletPath();
+			if (action.equals("/main")) {
+				homePage(request, response);
+			} else if (action.equals("/insert")) {
+				novoUsuario(request, response);
+			} else if (action.equals("/user")) {
+				redirectUser(request, response);
+			} else {
+				dao.testeConexao();
+				response.sendRedirect("index.html");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e);
+			response.sendRedirect("./alerts/erroServer.html");
 		}
 	}
 
+	/**
+	 * ----------------------------------------------------------------
+	 * GERAÇÃO DE HOME PAGE
+	 * ----------------------------------------------------------------
+	 */
 	protected void homePage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// Criando um objeto que irá receber os dados Javabeans
+		ArrayList<JavaBeans> lista = dao.listarVeiculos();
 
+		// Encaminhar a lista ao documento home.jsp
+		request.setAttribute("carros", lista);
+		RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
+		rd.forward(request, response);
+
+	}
+
+	/**
+	 * ----------------------------------------------------------------
+	 * VALIDAÇÃO DE LOGIN
+	 * ----------------------------------------------------------------
+	 */
+	protected void validaLogin(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		ArrayList<UserBeans> listarUsuarios = dao.listarUser();
 		String requestedUsername = request.getParameter("user");
 		String requestedPassword = request.getParameter("password");
+		int requestId;
 
 		boolean userFound = false;
 		boolean passwordFound = false;
@@ -55,40 +100,24 @@ public class Controller extends HttpServlet {
 			if (user.getNome().equals(requestedUsername) && user.getSenha().equals(requestedPassword)) {
 				userFound = true;
 				passwordFound = true;
-
+				requestId = Integer.parseInt(user.getIduser());
+				
 				// Verifica se o usuário é um administrador
-				isAdmin = user.getIsAdmin().equals("true");
+				//isAdmin = user.getIsAdmin().equals("true");
 				break;
 			}
 		}
-
+		
 		if (userFound && passwordFound) {
-			// Criando um objeto que irá receber os dados Javabeans
-			ArrayList<JavaBeans> lista = dao.listarVeiculos();
-			// Encaminhar a lista ao documento home.jsp
-			request.setAttribute("nome", requestedUsername);
-			
-			request.setAttribute("carros", lista);
-			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
-			rd.forward(request, response);
+			homePage(response, request);
 		}
 	}
 
-	// Método de redirecionamento para o home(adm), coom suas requisições
-	protected void homeAdm(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		// Criando um objeto que irá receber os dados Javabeans
-		ArrayList<JavaBeans> lista = dao.listarVeiculos();
-
-		// Encaminhar a lista ao documento home.jsp
-		request.setAttribute("carros", lista);
-		RequestDispatcher rd = request.getRequestDispatcher("homeAdm.jsp");
-		rd.forward(request, response);
-
-	}
-
-	// Novo Contato
+	/**
+	 * ----------------------------------------------------------------
+	 * CRIAÇÃO DE UM NOVO USUÁRIO
+	 * ----------------------------------------------------------------
+	 */
 	protected void novoUsuario(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -102,6 +131,16 @@ public class Controller extends HttpServlet {
 
 		// redirecionar para o documento home.jsp
 		response.sendRedirect("./login.html");
+	}
 
+	/**
+	 * ----------------------------------------------------------------
+	 * Redirecionamento para página de usuário
+	 * ----------------------------------------------------------------
+	 */
+	protected void redirectUser(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("user.jsp");
+		rd.forward(request, response);
 	}
 }
