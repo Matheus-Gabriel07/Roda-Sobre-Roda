@@ -1,0 +1,190 @@
+body {
+  background: var(--gradient-white);
+  overflow-x: hidden;
+}
+
+.container-main {
+  padding-inline: 4rem;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 500ms ease;
+}
+.container-main header.container-highlight {
+  border-radius: 24px;
+  z-index: 0;
+  height: 450px;
+  width: calc(100% - 124px);
+  display: flex;
+  align-items: flex-start;
+  background: url("https://dragon2000-multisite.s3.eu-west-2.amazonaws.com/wp-content/uploads/sites/203/2021/05/19110448/Car-Station-Home-page-hero-2_result.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.35);
+  animation: fadeDown 750ms ease;
+  transition: 500ms ease;
+}
+.container-main header.container-highlight .container-highlight-details {
+  margin: 0 2rem;
+  position: relative;
+  width: 100%;
+  top: 2rem;
+  align-self: flex-start;
+}
+.container-main header.container-highlight .container-highlight-details h3.title-highlight {
+  margin-bottom: 1rem;
+  font-family: var(--titles);
+  font-size: 2.25em;
+  color: var(--white);
+  animation: fadeDown 750ms ease-in-out;
+}
+.container-main header.container-highlight .container-highlight-details p.description-highlight {
+  padding: 8px;
+  border-radius: 16px;
+  max-width: 550px;
+  color: var(--white);
+  font-size: 1.15;
+  background: var(--darkest-shadow);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  animation: fadeDown 750ms ease-in-out;
+}
+.container-main header.container-highlight .container-highlight-button {
+  width: -moz-max-content;
+  width: max-content;
+  align-self: flex-end;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.container-main header.container-highlight .container-highlight-button button#alugar {
+  border: 0;
+  border-radius: 25px;
+  padding-inline: 1rem;
+  font-size: 1.15em;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--white);
+  background: var(--primary);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: 250ms;
+  animation: fadeDown 750ms ease-in-out;
+}
+.container-main header.container-highlight .container-highlight-button button#alugar:hover {
+  transform: scale(1.1);
+  background: var(--white-smoke);
+  color: var(--primary);
+}
+.container-main h1#saudacaoUser {
+  margin: 4rem 0;
+  align-self: flex-start;
+  font-size: 2.25em;
+  font-family: var(--titles);
+  animation: fadeDown 750ms ease-in-out;
+  transition: 500ms ease;
+}
+.container-main section.container-categories {
+  margin: 1rem 0;
+  align-self: flex-start;
+  animation: fadeDown 750ms ease-in-out;
+}
+.container-main section.container-categories h3.title-categorie {
+  font-size: 26px;
+  font-weight: 600;
+}
+.container-main section.container-categories .swiper {
+  width: 600px;
+  height: 300px;
+}
+
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .container-main {
+    margin-top: 3rem;
+    padding-inline: 2rem;
+  }
+  .container-main header.container-highlight p.description-highlight {
+    font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .container-main {
+    padding-inline: 1rem;
+  }
+  .container-main header.container-highlight {
+    width: 100%;
+    height: 250px;
+  }
+  .container-main header.container-highlight h3.title-highlight {
+    font-size: 1.8em;
+  }
+  .container-main header.container-highlight button#alugar,
+  .container-main header.container-highlight p.description-highlight {
+    display: none;
+  }
+  .container-main h1#saudacaoUser {
+    font-size: 1.8em;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .container-main header.container-highlight {
+    height: 200px;
+  }
+  .container-main header.container-highlight h3.title-highlight {
+    font-size: 1.5em;
+  }
+  .container-main h1#saudacaoUser {
+    font-size: 1.5em;
+  }
+}
+/* loadiung */
+.lds-dual-ring {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 74px;
+  height: 74px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid var(--primary);
+  border-color: var(--primary) transparent var(--primary) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+h1.loading {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -65%);
+  font-size: 2em;
+  text-align: center;
+  text-transform: lowercase;
+  color: var(--primary);
+}/*# sourceMappingURL=homePage.css.map */
