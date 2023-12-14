@@ -9,13 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import model.DAO;
 import model.JavaBeans;
 import model.UserBeans;
 
-@WebServlet({ "/Controller", "/main", "/insert" })
+@WebServlet({ "/Controller", "/main", "/insert", "/aluguel" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
@@ -34,12 +32,14 @@ public class Controller extends HttpServlet {
 			homePage(request, response);
 		} else if (action.equals("/insert")) {
 			novoUsuario(request, response);
+		}else if (action.equals("/aluguel")) {
+			ExibirAluguel(request, response);
 		} else {
-			dao.testeConexao();
 			response.sendRedirect("index.html");
 		}
 	}
 
+	// HOME PAGE ----------------------------------------------------------------------------------------
 	protected void homePage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -67,26 +67,16 @@ public class Controller extends HttpServlet {
 			ArrayList<JavaBeans> lista = dao.listarVeiculos();
 			// Encaminhar a lista ao documento home.jsp
 			request.setAttribute("nome", requestedUsername);
-			
+
 			request.setAttribute("carros", lista);
 			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 			rd.forward(request, response);
 		}
 	}
+	// ---------------------------------------------------------------------------------------------------
 
-	// Método de redirecionamento para o home(adm), coom suas requisições
-	protected void homeAdm(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		// Criando um objeto que irá receber os dados Javabeans
-		ArrayList<JavaBeans> lista = dao.listarVeiculos();
-
-		// Encaminhar a lista ao documento home.jsp
-		request.setAttribute("carros", lista);
-		RequestDispatcher rd = request.getRequestDispatcher("homeAdm.jsp");
-		rd.forward(request, response);
-
-	}
+	// CRUD - CREATE
+	// -------------------------------------------------------------------------------
 
 	// Novo Contato
 	protected void novoUsuario(HttpServletRequest request, HttpServletResponse response)
@@ -102,6 +92,38 @@ public class Controller extends HttpServlet {
 
 		// redirecionar para o documento home.jsp
 		response.sendRedirect("./login.html");
+
+	}
+	// ---------------------------------------------------------------------------------------------
+	
+	// CRUD - READ
+	
+	//REDIRECIONAR PARA O ALUGUEL -------------------------------------------------------------------
+	protected void ExibirAluguel(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// Recebimento do id do contato que será editado
+		String idcar = request.getParameter("idcar");
+		System.out.println(idcar);
+		// Setar a variável JavaBeans
+		veiculo.setIdcar(idcar);
+		// Executar o método selecionarContato (DAO)
+		dao.selecionarVeiculo(veiculo);
+
+		// Setar os atributos do formulário com o conteúdo JavaBeans
+		request.setAttribute("idcon", veiculo.getIdcar());
+		request.setAttribute("nome", veiculo.getMarca());
+		request.setAttribute("fone", veiculo.getTipo());
+		request.setAttribute("email", veiculo.getModelo());
+		request.setAttribute("email", veiculo.getCor());
+		request.setAttribute("email", veiculo.getAno());
+		request.setAttribute("email", veiculo.getFotoPrin());
+		request.setAttribute("email", veiculo.getFotoSec());
+		request.setAttribute("email", veiculo.getDescricao());
+		request.setAttribute("email", veiculo.getDiaria());
+		request.setAttribute("email", veiculo.getAvaliacao());
+		// Encaminhar ao documento aluguel.jsp
+		RequestDispatcher rd = request.getRequestDispatcher("Alugar.jsp");
+		rd.forward(request, response);
 
 	}
 }

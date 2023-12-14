@@ -6,13 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import java.io.IOException;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 public class DAO {
 
@@ -39,15 +32,15 @@ public class DAO {
 		}
 	}
 
-	public void testeConexao() {
-		try {
-			Connection con = conectar();
-			System.out.println(con);
-			con.close();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-	}
+	//public void testeConexao() {
+		//try {
+			//Connection con = conectar();
+			//System.out.println(con);
+			//con.close();
+		//} catch (Exception e) {
+			//System.out.println(e);
+		//}
+	//}
 
 	/* CRUD Read */
 
@@ -182,13 +175,11 @@ public class DAO {
 			System.out.println(e);
 		}
 	}
+	//---------------------------------------------------------------------------------------------------------
 	
-	public String generateImage(String userName) {
-		return "Hi";
-	}
 	
 	public void selecionarVeiculo(JavaBeans veiculo) {
-		String read2 = "select * from usuarios where iduser = ?";
+		String read2 = "select * from usuarios where idcar = ?";
 		try {
 			Connection con = conectar();
 			PreparedStatement pst = con.prepareStatement(read2);
@@ -211,5 +202,9 @@ public class DAO {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+	}
+	
+	public String generateImage(String userName) {
+		return "Hi";
 	}
 }
