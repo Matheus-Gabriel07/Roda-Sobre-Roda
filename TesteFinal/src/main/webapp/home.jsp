@@ -18,29 +18,28 @@
 </head>
 <%
 DAO dao = new DAO();
-UserBeans userBeans = new UserBeans();
 ArrayList<JavaBeans> veiculos = dao.listarVeiculos();
+	UserBeans loggedInUser = (UserBeans) request.getAttribute("loggedInUser");
 %>
 <body>
-	<main class="root">
-		<section class="container-main">
-			<!-- Header Main -->
-			<header class="container-highlight"
-				style='background: url(<%=veiculos.get(1).getFotoPrin()%>);'>
-				<div class="container-highlight-details">
-					<h3 class="title-highlight"><%=veiculos.get(1).getModelo()%></h3>
-					<p class="description-highlight">
-						<%=veiculos.get(1).getDescricao()%>
-					</p>
-				</div>
-				<div class="container-highlight-button">
-					<button id="alugar" onclick="aluguel">Alugar</button>
-				</div>
-			</header>
+<main class="root">
+      <section class="container-main">
+        <!-- Header Main -->
+        <header class="container-highlight" style='background: url("<%= veiculos.get(1).getFotoPrin()%>");'>
+          <div class="container-highlight-details">
+            <h3 class="title-highlight"><%= veiculos.get(1).getModelo() %></h3>
+            <p class="description-highlight">
+              <%= veiculos.get(1).getDescricao() %>
+            </p>
+          </div>
+          <div class="container-highlight-button">
+            <button id="alugar" onclick="window.location.href = './alugar.jsp'">Alugar</button>
+          </div>
+        </header>
 
-			<h1 id="saudacaoUser">Ol·, placeholder</h1>
+			<h1 id="saudacaoUser">Ol√°, placeholder</h1>
 
-			<!-- Sessıes -->
+			<!-- SessÔøΩes -->
 
 			<section class="container-categories">
 				<h3 class="title-categorie">Veiculos mais alugados</h3>
@@ -73,6 +72,5 @@ ArrayList<JavaBeans> veiculos = dao.listarVeiculos();
 
 	<script src="./scripts/navbar.js"></script>
 	<script src="./scripts/menu.js"></script>
-	<script src="./scripts/firstLoading.js"></script>
 </body>
 </html>

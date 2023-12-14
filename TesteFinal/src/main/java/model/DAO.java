@@ -132,6 +132,7 @@ public class DAO {
 			PreparedStatement pst = con.prepareStatement(read2);
 			pst.setString(1, usuario.getIduser());
 			ResultSet rs = pst.executeQuery();
+			
 			while (rs.next()) {
 				usuario.setIduser(rs.getString(1));
 				usuario.setNome(rs.getString(2));
