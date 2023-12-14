@@ -85,13 +85,13 @@ header nav.header-navegation a.button-navegation.about:hover {
   z-index: 8;
   display: block;
   position: relative;
-  left: 25vh;
+  left: 20vh;
   top: 15vh;
   transition: 250ms ease;
 }
 
 .container-informations p {
-  font-size: 1em;
+  font-size: 28px;
   color: var(--white);
 }
 
