@@ -125,7 +125,7 @@ public class DAO {
 		}
 	}
 
-	public void selecionarContato(UserBeans usuario) {
+	public void selecionarUsuario(UserBeans usuario) {
 		String read2 = "select * from usuarios where iduser = ?";
 		try {
 			Connection con = conectar();
@@ -176,6 +176,12 @@ public class DAO {
 			System.out.println(e);
 		}
 	}
+
+	public String generateImage(String userName) {
+		return "./assets/placeholder.png";
+	}
+
+
 	//---------------------------------------------------------------------------------------------------------
 	
 	
@@ -203,9 +209,5 @@ public class DAO {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-	}
-	
-	public String generateImage(String userName) {
-		return "Hi";
 	}
 }

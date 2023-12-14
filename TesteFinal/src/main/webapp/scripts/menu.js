@@ -11,3 +11,8 @@ function scrollFunction() {
       "var(--white-smoke)";
   }
 }
+
+function scrollDown() {
+  let section = document.querySelectorAll(".container-categorie");
+  section.scrollIntoView({ behavior: 'smooth' });
+}
