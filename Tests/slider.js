@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const carousels = document.querySelectorAll(".carousel");
 
     carousels.forEach(carousel => {
-        const firstImg = carousel.querySelectorAll("img")[0];
+        const firstImg = carousel.querySelectorAll("figure")[0];
         const arrowIcons = carousel.parentElement.querySelectorAll(".fi-rr-angle-left, .fi-rr-angle-right");
 
         let isDragStart = false,
