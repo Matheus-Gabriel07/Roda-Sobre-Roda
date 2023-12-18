@@ -5,7 +5,7 @@ figure.containner-card-vehicle {
   border-radius: 1rem;
   display: flex;
   align-self: center;
-  max-width: max-content;
+  width: 450px;
   background: var(--white-smoke);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
@@ -33,11 +33,11 @@ p.card-vehicle-paragraph-details {
 }
 
 p.card-vehicle-paragraph-details::after {
-    z-index: 2;
-    content: ' ';
-    width: 200px;
-    height: 50px;
-    background: linear-gradient(to top, var(--white-smoke), rgba(255,255,255,0));
+  z-index: 2;
+  content: ' ';
+  width: 200px;
+  height: 50px;
+  background: linear-gradient(to top, var(--white-smoke), rgba(255, 255, 255, 0));
 }
 
 .container-card-vehicle-button {
@@ -60,4 +60,27 @@ p.card-vehicle-paragraph-details::after {
 
 .button-alugar:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 550px) {
+  figure.containner-card-vehicle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img.card-vehicle-img {
+    margin: 0;
+  }
+
+  .containner-card-vehicle-details {
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p.card-vehicle-paragraph-details,
+  .button-alugar {
+    display: none;
+  }
 }

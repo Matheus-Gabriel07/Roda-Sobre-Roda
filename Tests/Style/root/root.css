@@ -37,6 +37,44 @@
   --gradient-darkest: linear-gradient(to bottom, var(--darkest), null);
 
   --titles: "Exo 2", sans-serif;
+
+}
+
+/* Scrollbar */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) #DFE9EB;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 5px;
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #DFE9EB;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--primary);
 }
 
 * {
