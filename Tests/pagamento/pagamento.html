@@ -95,155 +95,178 @@
       </div>
     </nav>
     <main id="root">
-      <div class="multi-step_container">
-        <p id="step_name">Diaria</p>
-        <div class="container_step">
-          <span class="step">1</span>
-          <span class="step">2</span>
-          <span class="step">3</span>
-          <span class="step">4</span>
-        </div>
-      </div>
-      <section class="container container-1">
+      <section class="container_pagamento container_1">
         <h1>Pagamento</h1>
-        <h3>Veículo escolhido</h3>
-        <figure class="card_veichle">
+        <h3>Veiculo selecionado</h3>
+        <figure class="card_container">
           <img
             src="http://placehold.it/150x180"
-            alt="vehicle"
-            class="card_veichle_image"
+            alt=""
+            class="card_container_image"
           />
-          <div class="card_veichle_details">
+          <div class="card_container_informations">
             <h4>Lorem</h4>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
-              accusamus, beatae sapiente dignissimos ipsum tempora ullam atque
-              ab minima maiores dolorum doloremque reiciendis laudantium illo
-              optio explicabo, magnam, earum quis.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dignissimos odit fugit ullam iure cumque dolor veniam excepturi
+              deserunt illum? Saepe omnis id dicta soluta, sapiente temporibus
+              aspernatur voluptas quidem corporis?
             </p>
           </div>
         </figure>
-        <button id="next_step">Continuar</button>
+        <button class="button_pagamento_continuar" onclick="scrollDown()">
+          Continuar
+        </button>
       </section>
-      <form id="pagamento" action="pagamento">
-        <section class="container container-2">
-          <div class="container_diaria">
-            <section class="container_diaria_dias">
-              <label for="dias">Dias</label>
-              <input type="number" name="dias" id="dias" required />
-            </section>
-            <section class="container_diaria_retirada">
-              <label for="retirada">retirada</label>
-              <input type="date" name="retirada" id="retirada" required />
-            </section>
-            <section class="container_diaria_informations">
-              <div class="container_diaria_informations_general">
-                <h6 class="container_diaria_informations_general_subtitle">
-                  p/dia
-                </h6>
-                <span
-                  id="valorDia"
-                  class="container_diaria_informations_general_value"
-                ></span>
-              </div>
-              <div class="container_diaria_informations_general">
-                <h6 class="container_diaria_informations_general_subtitle">
-                  total
-                </h6>
-                <span
-                  id="valorTotal"
-                  class="container_diaria_informations_general_value"
-                ></span>
-              </div>
-            </section>
-            <section class="container_diaria_devolução">
-              <label for="devolucao">devolução</label>
-              <input type="date" name="devolucao" id="devolucao" readonly />
-            </section>
+      <section class="container_pagamento container_2">
+        <form action="pagamento" name="frmPagemento">
+          <div class="container_table_pagamento">
+            <table>
+              <tbody>
+                <tr class="table_informations">
+                  <td class="container_table_pagamento_name">
+                    Informações pessoais
+                  </td>
+                  <td>
+                    <div class="container_table_pagamento_input_area">
+                      <label for="titular">Titular</label>
+                      <input
+                        type="text"
+                        placeholder="Nome do titular"
+                        name="titular"
+                        id="titular"
+                        required
+                      />
+                    </div>
+                    <div class="container_table_pagamento_input_area">
+                      <label for="titular">Email</label>
+                      <input
+                        type="email"
+                        placeholder="Email do titular"
+                        name="email"
+                        id="email"
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <hr />
+                  </td>
+                </tr>
+                <tr class="table_informations">
+                  <td class="container_table_pagamento_name">Diaria</td>
+                  <td>
+                    <div class="container_table_pagamento_input_area">
+                      <label for="titular">Dias</label>
+                      <input
+                        type="number"
+                        placeholder="Quantos dias deseja alugar?"
+                        name="dias"
+                        id="dias"
+                        required
+                        onchange="valorFinal()"
+                      />
+                    </div>
+                    <div class="container_table_pagamento_input_area">
+                      <label for="titular">Retirada</label>
+                      <input
+                        type="date"
+                        placeholder="Data de retirada"
+                        name="retirada"
+                        id="retirada"
+                        required
+                        onchange="calcularDataSaida()"
+                      />
+                    </div>
+                    <div class="container_table_pagamento_input_area">
+                      <label for="titular">Devolução</label>
+                      <input
+                        type="date"
+                        placeholder="Data de devolução"
+                        name="devolucao"
+                        id="devolucao"
+                        readonly
+                      />
+                    </div>
+                    <div class="container_table_pagamento_input_area">
+                      <div class="container_table_pagamento_input_area_details">
+                        <h5>p/dia</h5>
+                        <p id="p_dia">50.40</p>
+                      </div>
+                      <div class="container_table_pagamento_input_area_details">
+                        <h5>Total</h5>
+                        <p id="total_diaria">50.40</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <hr />
+                  </td>
+                </tr>
+                <tr class="table_informations">
+                  <td class="container_table_pagamento_name">
+                    Forma de pagamento
+                  </td>
+                  <td>
+                    <div class="container_table_pagamento_input_area_details">
+                      <select name="forPagmento" id="">
+                        <option value="placehold">
+                          Selecione a forma de pagamento
+                        </option>
+                        <option value="placehold">Cartão de crédito</option>
+                        <option value="placehold">Cartão de debito</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <button id="next_step">Continuar</button>
-        </section>
-        <section class="container container-3" hidden>
-          <div class="container_options_pagamento">
-            <section class="options" id="pix">
-              <h4>PIX</h4>
-            </section>
-            <section class="options" id="debito">
-              <h4>Cartão de débito</h4>
-            </section>
-            <section class="options" id="crédito">
-              <h4>Cartão de crédito</h4>
-            </section>
-          </div>
-          <button id="next_step">Continuar</button>
-        </section>
-        <section class="container container-4" hidden>
-          <section class="container-4-option-pix">
-            <h4>Pague pelo pix quando confimar as informações</h4>
-            <button id="next_step">Continuar</button>
-          </section>
-          <section class="container-4-option-cartao">
-            <h4>Cartão de <span id="optionEsc"> crédito</span></h4>
-            <div class="container_cartao">
-              <section class="container_cartao_cvv">
-                <label for="cvv">CVV</label>
-                <input
-                  type="number"
-                  name="cvv"
-                  id="cvv"
-                  required
-                  maxlength="3"
-                />
-              </section>
-              <section class="container_cartao_numero">
-                <label for="numero">Nº do Cartão</label>
-                <input type="number" name="numero" id="numero" required />
-              </section>
-              <section class="container_cartao_cvv">
-                <label for="titular">Titular</label>
-                <input type="text" name="titular" id="titular" required />
-              </section>
-            </div>
-            <button id="next_step">Continuar</button>
-          </section>
-        </section>
-        <section class="container container-5" hidden>
-          <div class="container-5_infomations_general">
-            <div class="container-5_infomations_general_veiculoEscolhido">
-              <h5 class="container-5_infomations_general_subtitles">
-                Veículo escolhido
-              </h5>
-              <p class="container-5_infomations_general_infomartion">Lorem</p>
-            </div>
-            <div class="container-5_infomations_general_Titular">
-              <h5 class="container-5_infomations_general_subtitles">Titular</h5>
-              <p class="container-5_infomations_general_infomartion">
-                Lorem lorem
-              </p>
-            </div>
-            <div class="container-5_infomations_general_total">
-              <h5 class="container-5_infomations_general_subtitles">Total</h5>
-              <p class="container-5_infomations_general_infomartion">
-                R$253.26
-              </p>
-            </div>
-            <div class="container-5_infomations_general_veiculoEscolhido">
-              <h5 class="container-5_infomations_general_subtitles">
-                Retirada
-              </h5>
-              <p class="container-5_infomations_general_infomartion">Lorem</p>
-            </div>
-            <div class="container-5_infomations_general_veiculoEscolhido">
-              <h5 class="container-5_infomations_general_subtitles">
-                Devolução
-              </h5>
-              <p class="container-5_infomations_general_infomartion">Lorem</p>
-            </div>
-          </div>
-          <input type="submit" value="Confirmar" id="confirmar" />
-        </section>
-      </form>
+          <input
+            type="submit"
+            value="Confirmar"
+            class="button_pagamento_continuar"
+          />
+        </form>
+      </section>
     </main>
-    <script src="steps.js"></script>
   </body>
+  <script>
+    function valorFinal() {
+      let diaria = document.getElementById("dias").value;
+      let dia = document.getElementById("p_dia").textContent; // Usamos textContent para obter o valor como texto
+
+      dia = parseFloat(dia);
+
+      let totalDiaria = dia * diaria;
+      document.getElementById("total_diaria").innerHTML =
+        totalDiaria.toFixed(2);
+
+      console.log(totalDiaria);
+    }
+
+    function scrollDown() {
+      const targetSection = document.querySelector(".container_2");
+      console.log(targetSection);
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function calcularDataSaida() {
+      var dataEntrada = new Date(document.getElementById("retirada").value);
+
+      var quantidadeDias =
+        parseInt(document.getElementById("dias").value, 10) || 0;
+
+      var dataSaida = new Date(dataEntrada);
+      dataSaida.setDate(dataSaida.getDate() + quantidadeDias);
+
+      var dataSaidaFormatada = dataSaida.toISOString().split("T")[0];
+
+      document.getElementById("devolucao").value = dataSaidaFormatada;
+    }
+  </script>
 </html>
