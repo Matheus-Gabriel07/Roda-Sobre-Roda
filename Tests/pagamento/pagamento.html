@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSR - Pagamento</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../Style/pagamento.css" />
+    <link rel="stylesheet" href="../Style/root/root.css" />
+    <link rel="stylesheet" href="../Style/root/navbar.css" />
+  </head>
+  <body>
+    <nav class="container-navbar desktop" id="navbar">
+      <div class="navbar-box">
+        <div class="navbar-left">
+          <img src="./assets/Logo-RSR-R.png" alt="Logo-RSR" class="logo-nav" />
+          <div class="container-search">
+            <i class="fi fi-rr-search"></i>
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Digite um veículo que deseja alugar"
+            />
+          </div>
+        </div>
+        <div class="navbar-right">
+          <div class="tooltip">
+            <i
+              class="fi fi-rr-car"
+              onclick="window.location.href = 'home.jsp';"
+            ></i>
+            <span class="tooltip-content">Alugar</span>
+          </div>
+          <div class="tooltip">
+            <i
+              class="fi fi-rr-settings"
+              onclick="window.location.href = './alerts/notFound.html';"
+            ></i>
+            <span class="tooltip-content">Configurações</span>
+          </div>
+          <div class="tooltip">
+            <i
+              class="fi fi-rr-exit"
+              onclick="window.location.href = './index.html';"
+            ></i>
+            <span
+              class="tooltip-content"
+              onclick="window.location.href = './index.html';"
+              >Sair</span
+            >
+          </div>
+          <img
+            src="./assets/placeholder.png"
+            alt="user"
+            id="userPhoto"
+            onclick="window.location.href = '#1';"
+          />
+        </div>
+      </div>
+    </nav>
+    <nav class="container-navbar-media-device">
+      <div class="navbar-box-device">
+        <img
+          src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D"
+          alt="user"
+          id="userPhoto"
+          onclick="window.location.href = '#1';"
+        />
+        <div class="menu">
+          <div class="tooltip">
+            <i class="fi fi-rr-home"></i>
+            <span class="tooltip-content">Inicio</span>
+          </div>
+          <div class="tooltip">
+            <i class="fi fi-rr-car"></i>
+            <span class="tooltip-content">Alugar</span>
+          </div>
+          <div class="tooltip">
+            <i class="fi fi-rr-settings"></i>
+            <span class="tooltip-content" onclick="window.location.href = '#2';"
+              >Configurações</span
+            >
+          </div>
+          <div class="tooltip">
+            <i class="fi fi-rr-exit"></i>
+            <span
+              class="tooltip-content"
+              onclick="window.location.href = '/Index/index.html';"
+              >Sair</span
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main id="root">
+      <div class="multi-step_container">
+        <p id="step_name">Diaria</p>
+        <div class="container_step">
+          <span class="step">1</span>
+          <span class="step">2</span>
+          <span class="step">3</span>
+          <span class="step">4</span>
+        </div>
+      </div>
+      <section class="container container-1">
+        <h1>Pagamento</h1>
+        <h3>Veículo escolhido</h3>
+        <figure class="card_veichle">
+          <img
+            src="http://placehold.it/150x180"
+            alt="vehicle"
+            class="card_veichle_image"
+          />
+          <div class="card_veichle_details">
+            <h4>Lorem</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
+              accusamus, beatae sapiente dignissimos ipsum tempora ullam atque
+              ab minima maiores dolorum doloremque reiciendis laudantium illo
+              optio explicabo, magnam, earum quis.
+            </p>
+          </div>
+        </figure>
+        <button id="next_step">Continuar</button>
+      </section>
+      <form id="pagamento" action="pagamento">
+        <section class="container container-2">
+          <div class="container_diaria">
+            <section class="container_diaria_dias">
+              <label for="dias">Dias</label>
+              <input type="number" name="dias" id="dias" required />
+            </section>
+            <section class="container_diaria_retirada">
+              <label for="retirada">retirada</label>
+              <input type="date" name="retirada" id="retirada" required />
+            </section>
+            <section class="container_diaria_informations">
+              <div class="container_diaria_informations_general">
+                <h6 class="container_diaria_informations_general_subtitle">
+                  p/dia
+                </h6>
+                <span
+                  id="valorDia"
+                  class="container_diaria_informations_general_value"
+                ></span>
+              </div>
+              <div class="container_diaria_informations_general">
+                <h6 class="container_diaria_informations_general_subtitle">
+                  total
+                </h6>
+                <span
+                  id="valorTotal"
+                  class="container_diaria_informations_general_value"
+                ></span>
+              </div>
+            </section>
+            <section class="container_diaria_devolução">
+              <label for="devolucao">devolução</label>
+              <input type="date" name="devolucao" id="devolucao" readonly />
+            </section>
+          </div>
+          <button id="next_step">Continuar</button>
+        </section>
+        <section class="container container-3" hidden>
+          <div class="container_options_pagamento">
+            <section class="options" id="pix">
+              <h4>PIX</h4>
+            </section>
+            <section class="options" id="debito">
+              <h4>Cartão de débito</h4>
+            </section>
+            <section class="options" id="crédito">
+              <h4>Cartão de crédito</h4>
+            </section>
+          </div>
+          <button id="next_step">Continuar</button>
+        </section>
+        <section class="container container-4" hidden>
+          <section class="container-4-option-pix">
+            <h4>Pague pelo pix quando confimar as informações</h4>
+            <button id="next_step">Continuar</button>
+          </section>
+          <section class="container-4-option-cartao">
+            <h4>Cartão de <span id="optionEsc"> crédito</span></h4>
+            <div class="container_cartao">
+              <section class="container_cartao_cvv">
+                <label for="cvv">CVV</label>
+                <input
+                  type="number"
+                  name="cvv"
+                  id="cvv"
+                  required
+                  maxlength="3"
+                />
+              </section>
+              <section class="container_cartao_numero">
+                <label for="numero">Nº do Cartão</label>
+                <input type="number" name="numero" id="numero" required />
+              </section>
+              <section class="container_cartao_cvv">
+                <label for="titular">Titular</label>
+                <input type="text" name="titular" id="titular" required />
+              </section>
+            </div>
+            <button id="next_step">Continuar</button>
+          </section>
+        </section>
+        <section class="container container-5" hidden>
+          <div class="container-5_infomations_general">
+            <div class="container-5_infomations_general_veiculoEscolhido">
+              <h5 class="container-5_infomations_general_subtitles">
+                Veículo escolhido
+              </h5>
+              <p class="container-5_infomations_general_infomartion">Lorem</p>
+            </div>
+            <div class="container-5_infomations_general_Titular">
+              <h5 class="container-5_infomations_general_subtitles">Titular</h5>
+              <p class="container-5_infomations_general_infomartion">
+                Lorem lorem
+              </p>
+            </div>
+            <div class="container-5_infomations_general_total">
+              <h5 class="container-5_infomations_general_subtitles">Total</h5>
+              <p class="container-5_infomations_general_infomartion">
+                R$253.26
+              </p>
+            </div>
+            <div class="container-5_infomations_general_veiculoEscolhido">
+              <h5 class="container-5_infomations_general_subtitles">
+                Retirada
+              </h5>
+              <p class="container-5_infomations_general_infomartion">Lorem</p>
+            </div>
+            <div class="container-5_infomations_general_veiculoEscolhido">
+              <h5 class="container-5_infomations_general_subtitles">
+                Devolução
+              </h5>
+              <p class="container-5_infomations_general_infomartion">Lorem</p>
+            </div>
+          </div>
+          <input type="submit" value="Confirmar" id="confirmar" />
+        </section>
+      </form>
+    </main>
+    <script src="steps.js"></script>
+  </body>
+</html>

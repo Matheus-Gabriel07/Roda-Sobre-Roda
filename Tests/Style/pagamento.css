@@ -1,0 +1,140 @@
+#root {
+    margin-top: 6rem;
+    padding-inline: 4rem;
+}
+
+/* STEPS */
+
+.multi-step_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    /*display: none;*/
+}
+
+.multi-step_container p#step_name {
+    margin: 1rem 0;
+    font-family: var(--titles);
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.multi-step_container .container_step {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.multi-step_container .container_step span.step {
+    border-radius: 100%;
+    --size-step: 45px;
+    width: var(--size-step);
+    height: var(--size-step);
+    font-family: var(--titles);
+    font-weight: 21px;
+    font-weight: 700;
+    line-height: var(--size-step);
+    text-align: center;
+    color: var(--darkest-light);
+    background: var(--darkest-light-shadow);
+    box-shadow: 0 0 4px var(--darkest-shadow);
+    cursor: default;
+    transition: 500ms;
+}
+
+.multi-step_container .container_step span.step:first-child {
+    color: var(--primary);
+    background: var(--secondary-shadow);
+}
+
+/* Container 1 */
+
+.container.container-1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container.container-1 h1 {
+    margin: 1rem 0;
+    font-family: var(--titles);
+    font-size: 48px;
+}
+
+.container.container-1 {
+    margin-top: -110px;
+    align-items: flex-start;
+}
+
+.container.container-1 button#next_step {
+    display: none;
+}
+
+/* Card */
+
+.card_veichle {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 8px;
+    background: var(--white-smoke);
+    box-shadow: 0 0 8px var(--darkest-light-shadow);
+}
+
+.card_veichle .card_veichle_image {
+    width: 150px;
+    height: 180px;
+    border-radius: 8px;
+    cursor: default;
+}
+
+.card_veichle .card_veichle_details {
+    align-self: flex-start;
+}
+
+.card_veichle .card_veichle_details h4 {
+    margin: 4px 0;
+    font-size: 21px;
+    cursor: default;
+}
+
+.card_veichle .card_veichle_details p {
+    font-size: 10px;
+    cursor: default;
+}
+
+/* Button */
+
+button#next_step {
+    border: 1px solid var(--primary);
+    border-radius: 25px;
+    padding: 0.5rem 0;
+    padding-inline: 2rem;
+    font-size: 21px;
+    color: var(--primary);
+    background: transparent;
+    box-shadow: 0 4px 4px var(--darkest-light-shadow);
+    cursor: pointer;
+    transition: 250ms;
+}
+
+button#next_step:hover {
+    color: var(--white);
+    background: var(--primary);
+}
+
+/* container 2 */
+
+.container.container-2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.container.container-2 .container_diaria {}
