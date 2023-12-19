@@ -18,6 +18,25 @@
 <link rel="stylesheet" href="./style/indexHome.css">
 <link rel="stylesheet" href="./style/settings/root.css">
 <link rel="stylesheet" href="./style/settings/navbar.css">
+<style>
+figure.containner-card-vehicle {
+	padding: 0.8rem 0;
+	padding-inline: 1rem;
+	border: 0;
+	border-radius: 1rem;
+	display: flex;
+	align-self: center;
+	width: 450px;
+	background: var(--white-smoke);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+img.card-vehicle-img {
+	width: 150px;
+	height: 180px;
+	object-fit: cover;
+}
+</style>
 </head>
 <%
 DAO dao = new DAO();
@@ -247,9 +266,15 @@ ArrayList<JavaBeans> veiculos = dao.listarVeiculos();
 			</section>
 		</section>
 	</main>
-	<script src="./scripts/slider.js"></script>
-	<script src="./scripts/sliderHighlights.js"></script>
-	<script src="./scripts/menu.js"></script>
-	<script src="./scripts/scroll.js"></script>
+	<script>
+	function scrollDown() {
+		// Obtém a referência da seção alvo
+		const targetSection = document.getElementById('sectionCategories');
+
+		// Usa o método `scrollIntoView` com o comportamento suave
+		targetSection.scrollIntoView({ behavior: 'smooth' });
+	}
+	
+	</script>
 </body>
 </html>
