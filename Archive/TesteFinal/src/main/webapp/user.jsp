@@ -7,7 +7,7 @@
 <%
     DAO dao = new DAO();
     ArrayList<JavaBeans> veiculos = dao.listarVeiculos();
-    UserBeans loggedInUser = (UserBeans) request.getAttribute("user");
+    UserBeans loggedInUser = (UserBeans)request.getAttribute("loggedInUser");
 %>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
 <meta charset="ISO-8859-1">
 <title>RSR - <%= loggedInUser.getNome()%></title>
 <link rel="stylesheet" href="./style/settings/root.css" />
-<link rel="stylesheet" href="./style/settings/user.css" />
+<link rel="stylesheet" href="./style/user.css" />
 <link rel="stylesheet" href="./style/settings/navbar.css" />
 <link rel="shortcut icon" href="./assets/Logo-RSR.png"
 	type="image/x-icon" />

@@ -12,6 +12,8 @@ int i = Integer.parseInt(request.getParameter("index"));
 DAO dao = new DAO();
 ArrayList<JavaBeans> veiculos = dao.listarVeiculos();
 JavaBeans veiculoSelecionado = veiculos.get(i);
+
+UserBeans loggedInUser = (UserBeans)request.getAttribute("loggedInUser");
 %>
 
 <!DOCTYPE html>
@@ -62,7 +64,7 @@ JavaBeans veiculoSelecionado = veiculos.get(i);
 			<!-- Linha 6 -->
 			<div class="navbar-box-device">
 				<img
-					src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D"
+					src="./assets/placeholder.png"
 					alt="user" id="userPhoto" onclick="window.location.href = '#1';">
 				<!-- Linha 7 -->
 				<div class="menu">
@@ -130,7 +132,11 @@ JavaBeans veiculoSelecionado = veiculos.get(i);
             </div>
             <div class="container-value-alugar">
                 <h3 class="valor-diaria"><%=veiculoSelecionado.getDiaria()%></h3>
-                <button id="alugar" onclick="window.location.href='./alerts/manutencao.html'">Alugar</button>
+                <%if(loggedInUser.getNome() != null) { %>
+                <button id="alugar" onclick="window.location.href='/pagamento'">Alugar</button>
+                <%} else {  %>
+                <button id="alugar" onclick="./login.html">Alugar</button>
+                <%} %>
             </div>
           </div>
         </div>

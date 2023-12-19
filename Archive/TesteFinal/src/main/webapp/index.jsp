@@ -18,25 +18,6 @@
 <link rel="stylesheet" href="./style/indexHome.css">
 <link rel="stylesheet" href="./style/settings/root.css">
 <link rel="stylesheet" href="./style/settings/navbar.css">
-<style>
-figure.containner-card-vehicle {
-	padding: 0.8rem 0;
-	padding-inline: 1rem;
-	border: 0;
-	border-radius: 1rem;
-	display: flex;
-	align-self: center;
-	width: 450px;
-	background: var(--white-smoke);
-	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-}
-
-img.card-vehicle-img {
-	width: 150px;
-	height: 180px;
-	object-fit: cover;
-}
-</style>
 </head>
 <%
 DAO dao = new DAO();
@@ -47,7 +28,7 @@ ArrayList<JavaBeans> veiculos = dao.listarVeiculos();
 	<section class="module_parallax">
 		<div class="container_logo">
 			<h3>Aluguel de Veículos</h3>
-			<img src="./assets/Logo-RSR-N.png" alt="logo"
+			<img src="/Assets/Logo-RSR-N.png" alt="logo"
 				class="container_logo_image" />
 			<p class="container_logo_paragraph">"Liberdade em cada rota"</p>
 		</div>
@@ -62,7 +43,7 @@ ArrayList<JavaBeans> veiculos = dao.listarVeiculos();
 		<nav class="container-navbar desktop index" id="navbar">
 			<div class="navbar-box">
 				<div class="navbar-left">
-					<img src="./assets/Logo-RSR-R.png" alt="Logo-RSR" class="logo-nav">
+					<img src="/Assets/Logo-RSR-R.png" alt="Logo-RSR" class="logo-nav">
 					<div class="container-search">
 						<i class="fi fi-rr-search"></i> <input type="search" name="search"
 							id="search" placeholder="Digite um veículo que deseja alugar">
@@ -99,19 +80,23 @@ ArrayList<JavaBeans> veiculos = dao.listarVeiculos();
 					<%
 					for (int i = 0; i <= 4; i++) {
 					%>
-					<header class="container-highlight slide"
-						style='background: url("<%=veiculos.get(1).getFotoPrin()%>");'>
-						<div class="container-highlight-details">
-							<h3 class="title-highlight"><%=veiculos.get(1).getModelo()%></h3>
-							<p class="description-highlight">
-								<%=veiculos.get(1).getDescricao()%>
+					<figure class="containner-card-vehicle">
+						<img src='<%=veiculos.get(i).getFotoPrin()%>' alt="vehicle"
+							class="card-vehicle-img" />
+						<div class="containner-card-vehicle-details">
+							<h3 class="card-vehicle-title">
+								<%=veiculos.get(i).getModelo()%>
+							</h3>
+							<p class="card-vehicle-paragraph-details">
+								<%=veiculos.get(i).getDescricao()%>
 							</p>
+							<div class="container-card-vehicle-button">
+								<a
+									href="aluguel?idCar=<%=veiculos.get(i).getIdcar()%>&index=<%=i%>"
+									class="button-alugar">Alugar</a>
+							</div>
 						</div>
-						<div class="container-highlight-button">
-							<a id="alugar"
-								href="alugar.jsp?idCar=<%=veiculos.get(1).getIdcar()%>&index=<%=1%>">Alugar</a>
-						</div>
-					</header>
+					</figure>
 					<%
 					}
 					%>
@@ -266,15 +251,10 @@ ArrayList<JavaBeans> veiculos = dao.listarVeiculos();
 			</section>
 		</section>
 	</main>
-	<script>
-	function scrollDown() {
-		// Obtém a referência da seção alvo
-		const targetSection = document.getElementById('sectionCategories');
-
-		// Usa o método `scrollIntoView` com o comportamento suave
-		targetSection.scrollIntoView({ behavior: 'smooth' });
-	}
-	
-	</script>
+	<script src="./scripts/slider.js"></script>
+	<script src="./scripts/sliderHighlights.js"></script>
+	<script src="./scripts/menu.js"></script>
+	<script src="./scripts/scroll.js"></script>
 </body>
+
 </html>
