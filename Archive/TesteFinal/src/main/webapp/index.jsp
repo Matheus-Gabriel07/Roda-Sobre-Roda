@@ -130,7 +130,7 @@ ArrayList<JavaBeans> veiculos = dao.listarVeiculos();
 								</p>
 								<div class="container-card-vehicle-button">
 									<a
-										href="aluguel?idCar=<%=veiculos.get(i).getIdcar()%>&index=<%=i%>"
+										href="alugar?idCar=<%=veiculos.get(i).getIdcar()%>&index=<%=i%>"
 										class="button-alugar">Alugar</a>
 								</div>
 							</div>

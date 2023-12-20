@@ -167,7 +167,7 @@ public class Controller extends HttpServlet {
 		request.setAttribute("email", veiculo.getDiaria());
 		request.setAttribute("email", veiculo.getAvaliacao());
 		// Encaminhar ao documento alugar.jsp
-		RequestDispatcher rd = request.getRequestDispatcher("./alugar.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("alugar.jsp");
 		rd.forward(request, response);
 
 	}
