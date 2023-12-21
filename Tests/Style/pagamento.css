@@ -1,0 +1,133 @@
+#root, body {
+    background: var(--white);
+    overflow-y: hidden;
+}
+
+section.container_pagamento {
+  padding-inline: 4rem;
+  height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section.container_pagamento.container_2 {
+  background: var(--gradient-secondary);
+}
+
+/* Container 1 */
+
+section.container_pagamento.container_1 h1,
+.section.container_pagamento.container_1 h3 {
+  margin: 1rem;
+  font-family: var(--titles);
+  font-weight: 700;
+  font-size: 48px;
+}
+
+section.container_pagamento.container_1 h3 {
+    font-size: 26px;
+}
+
+/* Card */
+
+.card_container {
+  margin: 2rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 8px;
+  background: var(--white-smoke);
+  box-shadow: 0 0 8px var(--darkest-light-shadow);
+}
+
+.card_container .card_container_image {
+  width: 150px;
+  height: 180px;
+  border-radius: 8px;
+  cursor: default;
+}
+
+.card_container .card_container_informations {
+  align-self: flex-start;
+}
+
+.card_container .card_container_informations h4 {
+  margin: 4px 0;
+  font-size: 21px;
+  cursor: default;
+}
+
+.card_container .card_container_informations p {
+  font-size: 10px;
+  cursor: default;
+}
+
+/* Button */
+
+button.button_pagamento_continuar,
+input.button_pagamento_continuar {
+  border: 1px solid var(--primary);
+  border-radius: 25px;
+  padding: 0.5rem 0;
+  padding-inline: 2rem;
+  font-size: 21px;
+  color: var(--primary);
+  background: transparent;
+  box-shadow: 0 4px 4px var(--darkest-light-shadow);
+  cursor: pointer;
+  transition: 250ms;
+}
+
+button.button_pagamento_continuar:hover,
+input.button_pagamento_continuar:hover {
+  color: var(--white);
+  background: var(--primary);
+}
+
+/* container 2 */
+
+.container_pagamento.container_2 form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container_table_pagamento {
+    margin: 2rem 0;
+    border-radius: 24px;
+    padding: 0.8rem 0;
+    padding-inline: 1.5rem;
+    background: var(--darkest-light-shadow);
+    box-shadow:  0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+tr.table_informations {
+    margin: 2rem 0;
+}
+
+td.container_table_pagamento_name {
+    padding: 1rem;
+    font-family: var(--titles);
+    font-weight: 700;
+    font-size: 1em;
+}
+
+td hr {
+    position: absolute;
+    width: 425px;
+    border: 0.8px solid #000;
+}
+
+.container_table_pagamento_input_area {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
