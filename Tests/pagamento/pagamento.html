@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSR - Pagamento</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../Style/pagamento.css" />
+    <link rel="stylesheet" href="../Style/root/root.css" />
+    <link rel="stylesheet" href="../Style/root/navbar.css" />
+  </head>
+  <body>
+    <nav class="container-navbar desktop" id="navbar">
+      <div class="navbar-box">
+        <div class="navbar-left">
+          <img src="./assets/Logo-RSR-R.png" alt="Logo-RSR" class="logo-nav" />
+          <div class="container-search">
+            <i class="fi fi-rr-search"></i>
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Digite um veículo que deseja alugar"
+            />
+          </div>
+        </div>
+        <div class="navbar-right">
+          <div class="tooltip">
+            <i
+              class="fi fi-rr-car"
+              onclick="window.location.href = 'home.jsp';"
+            ></i>
+            <span class="tooltip-content">Alugar</span>
+          </div>
+          <div class="tooltip">
+            <i
+              class="fi fi-rr-settings"
+              onclick="window.location.href = './alerts/notFound.html';"
+            ></i>
+            <span class="tooltip-content">Configurações</span>
+          </div>
+          <div class="tooltip">
+            <i
+              class="fi fi-rr-exit"
+              onclick="window.location.href = './index.html';"
+            ></i>
+            <span
+              class="tooltip-content"
+              onclick="window.location.href = './index.html';"
+              >Sair</span
+            >
+          </div>
+          <img
+            src="./assets/placeholder.png"
+            alt="user"
+            id="userPhoto"
+            onclick="window.location.href = '#1';"
+          />
+        </div>
+      </div>
+    </nav>
+    <nav class="container-navbar-media-device">
+      <div class="navbar-box-device">
+        <img
+          src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D"
+          alt="user"
+          id="userPhoto"
+          onclick="window.location.href = '#1';"
+        />
+        <div class="menu">
+          <div class="tooltip">
+            <i class="fi fi-rr-home"></i>
+            <span class="tooltip-content">Inicio</span>
+          </div>
+          <div class="tooltip">
+            <i class="fi fi-rr-car"></i>
+            <span class="tooltip-content">Alugar</span>
+          </div>
+          <div class="tooltip">
+            <i class="fi fi-rr-settings"></i>
+            <span class="tooltip-content" onclick="window.location.href = '#2';"
+              >Configurações</span
+            >
+          </div>
+          <div class="tooltip">
+            <i class="fi fi-rr-exit"></i>
+            <span
+              class="tooltip-content"
+              onclick="window.location.href = '/Index/index.html';"
+              >Sair</span
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main id="root">
+      <section class="container_pagamento container_1">
+        <h1>Pagamento</h1>
+        <h3>Veiculo selecionado</h3>
+        <figure class="card_container">
+          <img
+            src="http://placehold.it/150x180"
+            alt=""
+            class="card_container_image"
+          />
+          <div class="card_container_informations">
+            <h4>Lorem</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dignissimos odit fugit ullam iure cumque dolor veniam excepturi
+              deserunt illum? Saepe omnis id dicta soluta, sapiente temporibus
+              aspernatur voluptas quidem corporis?
+            </p>
+          </div>
+        </figure>
+        <button class="button_pagamento_continuar" onclick="scrollDown()">
+          Continuar
+        </button>
+      </section>
+      <section class="container_pagamento container_2">
+        <form action="pagamento" name="frmPagemento">
+          <div class="container_table_pagamento">
+            <table>
+              <tbody>
+                <tr class="table_informations">
+                  <td class="container_table_pagamento_name">
+                    Informações pessoais
+                  </td>
+                  <td>
+                    <div class="container_table_pagamento_input_area">
+                      <label for="titular">Titular</label>
+                      <input
+                        type="text"
+                        placeholder="Nome do titular"
+                        name="titular"
+                        id="titular"
+                        required
+                      />
+                    </div>
+                    <div class="container_table_pagamento_input_area">
+                      <label for="titular">Email</label>
+                      <input
+                        type="email"
+                        placeholder="Email do titular"
+                        name="email"
+                        id="email"
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <hr />
+                  </td>
+                </tr>
+                <tr class="table_informations">
+                  <td class="container_table_pagamento_name">Diaria</td>
+                  <td>
+                    <div class="container_table_pagamento_input_area">
+                      <label for="titular">Dias</label>
+                      <input
+                        type="number"
+                        placeholder="Quantos dias deseja alugar?"
+                        name="dias"
+                        id="dias"
+                        required
+                        onchange="valorFinal()"
+                      />
+                    </div>
+                    <div class="container_table_pagamento_input_area">
+                      <label for="titular">Retirada</label>
+                      <input
+                        type="date"
+                        placeholder="Data de retirada"
+                        name="retirada"
+                        id="retirada"
+                        required
+                        onchange="calcularDataSaida()"
+                      />
+                    </div>
+                    <div class="container_table_pagamento_input_area">
+                      <label for="titular">Devolução</label>
+                      <input
+                        type="date"
+                        placeholder="Data de devolução"
+                        name="devolucao"
+                        id="devolucao"
+                        readonly
+                      />
+                    </div>
+                    <div class="container_table_pagamento_input_area">
+                      <div class="container_table_pagamento_input_area_details">
+                        <h5>p/dia</h5>
+                        <p id="p_dia">50.40</p>
+                      </div>
+                      <div class="container_table_pagamento_input_area_details">
+                        <h5>Total</h5>
+                        <p id="total_diaria">50.40</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <hr />
+                  </td>
+                </tr>
+                <tr class="table_informations">
+                  <td class="container_table_pagamento_name">
+                    Forma de pagamento
+                  </td>
+                  <td>
+                    <div class="container_table_pagamento_input_area_details">
+                      <select name="forPagmento" id="">
+                        <option value="placehold">
+                          Selecione a forma de pagamento
+                        </option>
+                        <option value="placehold">Cartão de crédito</option>
+                        <option value="placehold">Cartão de debito</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <input
+            type="submit"
+            value="Confirmar"
+            class="button_pagamento_continuar"
+          />
+        </form>
+      </section>
+    </main>
+  </body>
+  <script>
+    function valorFinal() {
+      let diaria = document.getElementById("dias").value;
+      let dia = document.getElementById("p_dia").textContent; // Usamos textContent para obter o valor como texto
+
+      dia = parseFloat(dia);
+
+      let totalDiaria = dia * diaria;
+      document.getElementById("total_diaria").innerHTML =
+        totalDiaria.toFixed(2);
+
+      console.log(totalDiaria);
+    }
+
+    function scrollDown() {
+      const targetSection = document.querySelector(".container_2");
+      console.log(targetSection);
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function calcularDataSaida() {
+      var dataEntrada = new Date(document.getElementById("retirada").value);
+
+      var quantidadeDias =
+        parseInt(document.getElementById("dias").value, 10) || 0;
+
+      var dataSaida = new Date(dataEntrada);
+      dataSaida.setDate(dataSaida.getDate() + quantidadeDias);
+
+      var dataSaidaFormatada = dataSaida.toISOString().split("T")[0];
+
+      document.getElementById("devolucao").value = dataSaidaFormatada;
+    }
+  </script>
+</html>

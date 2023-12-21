@@ -42,6 +42,7 @@ public class DAO {
 		}
 	}
 
+
 	/* CRUD Read */
 
 	public ArrayList<JavaBeans> listarVeiculos() {
