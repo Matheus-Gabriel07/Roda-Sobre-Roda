@@ -1,3 +1,3 @@
-# Docuemntação geral
+# Documentação geral
 
 Em desenvolvimento
