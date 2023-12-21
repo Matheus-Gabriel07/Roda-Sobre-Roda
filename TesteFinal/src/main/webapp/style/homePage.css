@@ -11,6 +11,7 @@ body {
   align-items: center;
   transition: 500ms ease;
 }
+
 .container-main header.container-highlight {
   border-radius: 24px;
   z-index: 0;
@@ -24,6 +25,7 @@ body {
   animation: fadeDown 750ms ease;
   transition: 500ms ease;
 }
+
 .container-main header.container-highlight .container-highlight-details {
   margin: 0 2rem;
   position: relative;
@@ -31,6 +33,7 @@ body {
   top: 2rem;
   align-self: flex-start;
 }
+
 .container-main header.container-highlight .container-highlight-details h3.title-highlight {
   margin-bottom: 1rem;
   font-family: var(--titles);
@@ -38,6 +41,7 @@ body {
   color: var(--white);
   animation: fadeDown 750ms ease-in-out;
 }
+
 .container-main header.container-highlight .container-highlight-details p.description-highlight {
   padding: 8px;
   border-radius: 16px;
@@ -190,4 +194,8 @@ h1.loading {
   text-align: center;
   text-transform: lowercase;
   color: var(--primary);
+}
+
+/*# sourceMappingURL=homePage.css.map */
+=======
 }/*# sourceMappingURL=homePage.css.map */

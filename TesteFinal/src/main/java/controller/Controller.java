@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import javax.servlet.http.HttpSession;
 
 import model.DAO;
@@ -16,6 +17,7 @@ import model.JavaBeans;
 import model.UserBeans;
 
 @WebServlet({ "/Controller", "/main", "/validaLogin", "/insert", "/alugar", "/user" })
+
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
@@ -58,8 +60,6 @@ public class Controller extends HttpServlet {
 
 		// Criando um objeto que irá receber os dados Javabeans
 		ArrayList<JavaBeans> lista = dao.listarVeiculos();
-
-		//Encaminhar a lista ao documento home.jsp
 		request.setAttribute("carros", lista);
 		RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 		rd.forward(request, response);
@@ -159,8 +159,10 @@ public class Controller extends HttpServlet {
 		request.setAttribute("email", veiculo.getDescricao());
 		request.setAttribute("email", veiculo.getDiaria());
 		request.setAttribute("email", veiculo.getAvaliacao());
+
 		// Encaminhar ao documento alugar.jsp
 		RequestDispatcher rd = request.getRequestDispatcher("./alugar.jsp");
+
 		rd.forward(request, response);
 
 	}

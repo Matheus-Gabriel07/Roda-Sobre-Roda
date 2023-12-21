@@ -6,7 +6,7 @@
     pageEncoding="ISO-8859-1"%>
     
 <%
-// Recupera o índice da URL
+// Recupera o Ã­ndice da URL
 int index = Integer.parseInt(request.getParameter("index"));
 
 DAO dao = new DAO();
@@ -35,7 +35,7 @@ JavaBeans veiculoSelecionado = veiculos.get(index);
 					<img src="./assets/Logo-RSR-R.png" alt="Logo-RSR" class="logo-nav">
 					<div class="container-search">
 						<i class="fi fi-rr-search"></i> <input type="search" name="search"
-							id="search" placeholder="Digite um veículo que deseja alugar">
+							id="search" placeholder="Digite um veÃ­culo que deseja alugar">
 					</div>
 				</div>
 				<!-- Linha 4 -->
@@ -44,7 +44,7 @@ JavaBeans veiculoSelecionado = veiculos.get(index);
 						<i class="fi fi-rr-car" onclick="window.location.href = 'home.jsp';"></i> <span class="tooltip-content">Alugar</span>
 					</div>
 					<div class="tooltip">
-						<i class="fi fi-rr-settings" onclick="window.location.href = './alerts/notFound.html';"></i> <span class="tooltip-content">Configurações</span>
+						<i class="fi fi-rr-settings" onclick="window.location.href = './alerts/notFound.html';"></i> <span class="tooltip-content">ConfiguraÃ§Ãµes</span>
 					</div>
 					<div class="tooltip">
 						<i class="fi fi-rr-exit" onclick="window.location.href = './alerts/notFound.html';"></i> <span class="tooltip-content"
@@ -74,7 +74,7 @@ JavaBeans veiculoSelecionado = veiculos.get(index);
 					</div>
 					<div class="tooltip">
 						<i class="fi fi-rr-settings"></i> <span class="tooltip-content"
-							onclick="window.location.href = '#2';">Configurações</span>
+							onclick="window.location.href = '#2';">ConfiguraÃ§Ãµes</span>
 					</div>
 					<div class="tooltip">
 						<i class="fi fi-rr-exit"></i> <span class="tooltip-content"
