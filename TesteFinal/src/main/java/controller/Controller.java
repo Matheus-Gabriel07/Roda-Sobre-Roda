@@ -9,11 +9,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import javax.servlet.http.HttpSession;
+
 import model.DAO;
 import model.JavaBeans;
 import model.UserBeans;
 
-@WebServlet({ "/Controller", "/main", "/validaLogin", "/insert", "/aluguel", "/user" })
+@WebServlet({ "/Controller", "/main", "/validaLogin", "/insert", "/alugar", "/user" })
+
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
@@ -35,7 +39,7 @@ public class Controller extends HttpServlet {
 				validaLogin(request, response);
 			} else if (action.equals("/insert")) {
 				novoUsuario(request, response);
-			} else if (action.equals("/aluguel")) {
+			} else if (action.equals("/alugar")) {
 				ExibirAluguel(request, response);
 			} else if (action.equals("/user")) {
 				redirectUser(request, response);
@@ -56,8 +60,6 @@ public class Controller extends HttpServlet {
 
 		// Criando um objeto que irá receber os dados Javabeans
 		ArrayList<JavaBeans> lista = dao.listarVeiculos();
-
-		// Encaminhar a lista ao documento home.jsp
 		request.setAttribute("carros", lista);
 		RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 		rd.forward(request, response);
@@ -88,22 +90,16 @@ public class Controller extends HttpServlet {
 		}
 
 		if (userFound && passwordFound) {
-			String script = "<script type='text/javascript'>loadingUser();</script>";
-			response.getWriter().write(script);
-
-			HttpSession session = request.getSession();
-			session.setAttribute("loggedInUser", loggedInUser);
-
 			homePage(request, response);
 		} else if (!userFound) {
-			String script = "<script type='text/javascript'>alert('Usuário inválido')</script>";
-			response.getWriter().write(script);
+			String script2 = "<script type='text/javascript'>alert('Usuário inválido')</script>";
+			response.getWriter().write(script2);
 		} else if (!passwordFound) {
-			String script = "<script type='text/javascript'>alert('Senha inválida')</script>";
-			response.getWriter().write(script);
+			String script3 = "<script type='text/javascript'>alert('Senha inválida')</script>";
+			response.getWriter().write(script3);
 		} else {
-			String script = "<script type='text/javascript'>alert('Usuário ou Senha inválida')</script>";
-			response.getWriter().write(script);
+			String script4 = "<script type='text/javascript'>alert('Usuário ou Senha inválida')</script>";
+			response.getWriter().write(script4);
 		}
 	}
 	// ---------------------------------------------------------------------------------------------------
@@ -163,8 +159,10 @@ public class Controller extends HttpServlet {
 		request.setAttribute("email", veiculo.getDescricao());
 		request.setAttribute("email", veiculo.getDiaria());
 		request.setAttribute("email", veiculo.getAvaliacao());
-		// Encaminhar ao documento aluguel.jsp
-		RequestDispatcher rd = request.getRequestDispatcher("Alugar.jsp");
+
+		// Encaminhar ao documento alugar.jsp
+		RequestDispatcher rd = request.getRequestDispatcher("./alugar.jsp");
+
 		rd.forward(request, response);
 
 	}

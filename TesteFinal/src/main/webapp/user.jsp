@@ -21,26 +21,19 @@
 	type="image/x-icon" />
 </head>
 <body>
-<main class="root">
-	<nav class="container-navbar">
-        <div class="navbar-box">
-          <div class="navbar-left">
-            <img
-              src="/Assets/Logo-RSR-R.png"
-              alt="Logo-RSR" class="logo-nav"
-              />
-            <div class="container-search">
-              <i class="fi fi-rr-search"></i>
-              <input
-                type="search"
-                name="search"
-                id="search"
-                placeholder="Digite um veiculo que deseja alugar"
-              />
-            </div>
-          </div>
-          <div class="navbar-right">
-            <img src='<%= loggedInUser.getImagem()' alt="user" onclick="window.location.href='./user.jsp'" />
+	<main class="root">
+		<nav class="container-navbar">
+			<div class="navbar-box">
+				<div class="navbar-left">
+					<img src="/Assets/Logo-RSR-R.png" alt="Logo-RSR" class="logo-nav" />
+					<div class="container-search">
+						<i class="fi fi-rr-search"></i> <input type="search" name="search"
+							id="search" placeholder="Digite um veiculo que deseja alugar" />
+					</div>
+				</div>
+				<div class="navbar-right">
+					<img
+						src='<%= loggedInUser.getImagem()%>' alt="user" onclick="window.location.href='./user.jsp'" />
             <i class="fi fi-rr-car" onclick="scrollDown()"></i>
             <i
               class="fi fi-rr-settings"
