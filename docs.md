@@ -1,3 +1,0 @@
-# Documentação geral
-
-Em desenvolvimento
